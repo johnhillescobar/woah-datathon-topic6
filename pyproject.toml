@@ -1,0 +1,35 @@
+[project]
+name = "datathon"
+version = "0.1.0"
+description = "WOAH Datathon, Topic 6: trends in animal disease occurrence (WAHIS notifications and WorldClim weather)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "lightgbm>=4.7.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "openpyxl>=3.1.5",
+    "pandas>=3.1.0",
+    "pyarrow>=26.0.0",
+    "rasterio>=1.5.2",
+    "requests>=2.34.2",
+    "ruptures>=1.1.10",
+    "scipy>=1.18.1",
+    "statsmodels>=0.15.0",
+    "streamlit>=1.66.1",
+]
+
+[project.optional-dependencies]
+deep = [
+    "torch>=2.14.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "markdown>=3.11.2",
+    "nbclient>=0.11.0",
+    "nbconvert>=7.17.2",
+    "nbformat>=5.11.1",
+    "pytest>=9.1.1",
+]

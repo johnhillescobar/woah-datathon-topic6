@@ -1,0 +1,136 @@
+level,disease,area,trend_strength,seasonal_strength,peak_month
+global,Aethina tumida(Small hive beetle)(2006-),all,0.0,0.05307242620958741,9
+global,African horse sickness virus,all,0.0,0.0,5
+global,African swine fever virus,all,0.7953666597112397,0.07020307839795015,7
+global,Anthrax,all,0.14596341822223713,0.2430963678094099,6
+global,Aphanomyces astaci(Crayfish plague),all,0.010880695427612275,0.0,10
+global,Aphanomyces invadans (Epizootic ulcerative syndrome),all,0.012646928567399907,0.002142857503688367,7
+global,Aujeszky's disease virus,all,0.21963795947082254,0.2654467245048624,12
+global,Avian infectious laryngotracheitis,all,0.03367079590839772,0.055117284842937875,1
+global,Bluetongue virus,all,0.19965837964793298,0.29527806422864034,10
+global,Bovine spongiform encephalopathy,all,0.0027534361081004155,0.0,1
+global,Brucella abortus,all,0.0,0.0,12
+global,Brucella melitensis,all,0.0,0.01282352684322996,10
+global,Brucella suis,all,0.25030209629720024,0.15553275473071215,12
+global,Burkholderia mallei (Glanders),all,0.05358543067806987,0.1185517919994038,4
+global,Caprine arthritis/encephalitis,all,0.0,0.0,6
+global,Classical swine fever virus,all,0.10996194231126533,0.0,9
+global,Cochliomyia hominivorax (New world screwworm),all,0.22601168389173998,0.0,7
+global,Coxiella burnetii (Q fever),all,0.2350505503164363,0.2333614260435567,2
+global,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),all,0.005195420842098342,0.0,6
+global,Epizootic hemorrhagic disease virus,all,0.021759187321766293,0.0,11
+global,Equine arteritis virus,all,0.0,1.4357243227625105e-07,6
+global,Equine infectious anaemia,all,0.012813693908046098,0.034476496995414996,2
+global,Equine influenza virus,all,0.0,0.0,8
+global,Foot and mouth disease virus,all,0.2695649901136098,0.35305410470980014,1
+global,Fowl typhoid,all,0.014810737856519873,0.22958777738322078,8
+global,HPAI (all hosts),all,0.7466078819121307,0.473304511636486,1
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,0.8777237622236728,0.8566164892016161,12
+global,Infectious haematopoietic necrosis virus,all,0.0,0.0,10
+global,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),all,0.0,0.05322929524450837,6
+global,Koi herpesvirus,all,0.03403340130644461,0.050168074946470576,7
+global,Leishmania spp. (Leishmaniosis),all,0.061268385302017725,0.23552018073366965,1
+global,Low pathogenic avian influenza (poultry) (2006-2021),all,0.2998027038462654,0.17262121068180492,3
+global,Lumpy skin disease virus,all,0.16037744242200624,0.007448271316341848,7
+global,Melissococcus plutonius (European foulbrood),all,0.0,0.14652671884270774,5
+global,Mycoplasma mycoides subsp. mycoides (Contagious bovine pleuropneumonia),all,0.0,0.0,11
+global,Myxomatosis,all,0.0,0.0,11
+global,Newcastle disease virus,all,0.15587233027087521,0.32527442814828855,1
+global,Ostreid herpesvirus-1 microvariant(-2014),all,0.057597116152883765,0.0,5
+global,Paenibacillus larvae (American foulbrood),all,0.0,0.040745459822628116,9
+global,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),all,0.012757186374270035,0.0,5
+global,Peste des petits ruminants virus,all,0.0,0.016506987487028724,7
+global,Porcine reproductive and respiratory syndrome virus,all,0.0,0.0,3
+global,Rabies virus,all,0.3636074346886796,0.07601038837216223,9
+global,Rift Valley fever virus,all,0.02770545335108332,0.0,9
+global,SARS-CoV-2 in animals,all,0.9798831286055777,0.9554391480650272,11
+global,Scrapie,all,0.006028102132579205,0.0,1
+global,Sheep pox and goat pox,all,0.021617939255479723,0.0,9
+global,Spring viraemia of carp virus,all,0.0,0.11760365451152865,4
+global,Taylorella equigenitalis (Contagious equine metritis),all,0.0031809644052012143,0.04694702102628612,6
+global,Theileria equi and Babesia caballi (Equine piroplasmosis),all,0.031462538697514364,0.08003025321508872,6
+global,Tilapia lake virus (2023-),all,0.08100942714532011,0.35541034811381245,11
+global,Varroa spp. (Varroosis),all,0.0,0.22431371863592087,2
+global,Venezuelan equine encephalomyelitis,all,0.0022454943188959797,0.08468840360382635,1
+global,Vesicular stomatitis (-2014),all,0.03221667167590003,0.0,5
+global,Viral haemorrhagic septicaemia virus,all,0.04860198447630715,0.004731199704501754,11
+global,West Nile Fever,all,0.2093399704006218,0.4197121377818491,7
+global,White spot syndrome virus,all,0.009252859738834718,0.0,8
+region,Aethina tumida(Small hive beetle)(2006-),Americas,0.0,0.0,9
+region,African horse sickness virus,Africa,0.0,0.19925094627069095,3
+region,African swine fever virus,Africa,0.0,0.0,4
+region,African swine fever virus,Asia and the Pacific,0.6980718223184816,0.31750825450801334,3
+region,African swine fever virus,Europe,0.7800620896740353,0.042935110821105904,7
+region,Anthrax,Africa,0.007057253254485474,0.01804066364294621,2
+region,Anthrax,Europe,0.09480490313361711,0.2895595876635525,6
+region,Aphanomyces astaci(Crayfish plague),Europe,0.004897897427091125,0.008815690134837517,4
+region,Aphanomyces invadans (Epizootic ulcerative syndrome),Africa,0.004503050115688301,0.010854247356070879,7
+region,Aujeszky's disease virus,Europe,0.0030603228962819973,0.0,3
+region,Bluetongue virus,Africa,0.04645448228399729,0.0,10
+region,Bluetongue virus,Europe,0.09459868951705352,0.17780240537463832,9
+region,Bovine spongiform encephalopathy,Americas,0.3088831909877966,0.24943212501216638,12
+region,Bovine spongiform encephalopathy,Europe,0.0,0.05784622347173285,11
+region,Brucella melitensis,Europe,0.0023052219422308173,0.004822386543806734,6
+region,Brucella suis,Europe,0.0,0.11027227262710682,6
+region,Classical swine fever virus,Americas,0.0,0.0,1
+region,Classical swine fever virus,Asia and the Pacific,0.007910735623435472,0.0,9
+region,Classical swine fever virus,Europe,0.0,0.0,5
+region,Cochliomyia hominivorax (New world screwworm),Americas,0.22601168389173998,0.0,7
+region,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),Americas,0.005195420842098342,0.0,6
+region,Equine arteritis virus,Europe,0.013368881925824638,0.0,8
+region,Equine infectious anaemia,Europe,0.0,0.09368316777738228,1
+region,Equine influenza virus,Africa,0.02005147963687881,0.0,4
+region,Foot and mouth disease virus,Africa,0.1710826517450722,0.25122669109693396,4
+region,Foot and mouth disease virus,Americas,0.10672393923888568,0.40994466411822494,5
+region,Foot and mouth disease virus,Asia and the Pacific,0.186739373545741,0.162441381402874,1
+region,Foot and mouth disease virus,Europe,0.0,0.0,11
+region,Foot and mouth disease virus,Middle East,0.0,0.2596369178756188,1
+region,Fowl typhoid,Americas,0.0,0.038836208087641766,8
+region,HPAI (all hosts),Africa,0.06914126791514585,0.008899392389145722,6
+region,HPAI (all hosts),Americas,0.15498728416666419,0.0,4
+region,HPAI (all hosts),Asia and the Pacific,0.2775690513732444,0.37550389626265723,1
+region,HPAI (all hosts),Europe,0.7193090151675701,0.301971890041586,1
+region,HPAI (all hosts),Middle East,0.0,0.03610592929422396,12
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,0.3330407408561369,0.7020313660459887,1
+region,Infectious haematopoietic necrosis virus,Europe,0.0,0.0,3
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,0.09092347520345911,0.03703312445495288,2
+region,Koi herpesvirus,Europe,0.0,0.0,7
+region,Low pathogenic avian influenza (poultry) (2006-2021),Africa,0.10047607367567823,0.18639593670939048,7
+region,Low pathogenic avian influenza (poultry) (2006-2021),Americas,0.026423879482257884,0.0,12
+region,Low pathogenic avian influenza (poultry) (2006-2021),Asia and the Pacific,0.0937129195409796,0.04431404480563761,1
+region,Low pathogenic avian influenza (poultry) (2006-2021),Europe,0.043412843002768375,0.0,3
+region,Lumpy skin disease virus,Africa,0.0,0.23243120212201607,1
+region,Lumpy skin disease virus,Asia and the Pacific,0.0,0.0,7
+region,Lumpy skin disease virus,Europe,0.0,0.0,8
+region,Lumpy skin disease virus,Middle East,0.010376441071276221,0.0,2
+region,Melissococcus plutonius (European foulbrood),Europe,0.04707435068071486,0.11965319850101919,6
+region,Mycoplasma mycoides subsp. mycoides (Contagious bovine pleuropneumonia),Africa,0.0,0.0,11
+region,Newcastle disease virus,Americas,0.0,0.0,6
+region,Newcastle disease virus,Asia and the Pacific,0.25216469169384925,0.5255257127011929,2
+region,Newcastle disease virus,Europe,0.12478279610829546,0.2712117836394832,1
+region,Ostreid herpesvirus-1 microvariant(-2014),Europe,0.061304233091182825,0.0,5
+region,Paenibacillus larvae (American foulbrood),Europe,0.0,0.06847158311028712,7
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Americas,0.0,0.08055200392338813,1
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Europe,0.0,0.0,4
+region,Peste des petits ruminants virus,Africa,0.0,0.016084256813311826,1
+region,Peste des petits ruminants virus,Asia and the Pacific,0.0,0.0,7
+region,Peste des petits ruminants virus,Europe,0.27999134194130904,0.4126571235341959,7
+region,Porcine reproductive and respiratory syndrome virus,Asia and the Pacific,0.0,0.0,4
+region,Rabies virus,Africa,0.12249624484621036,0.09481761796126131,9
+region,Rabies virus,Americas,0.00296017399943993,3.497817683384419e-05,10
+region,Rabies virus,Asia and the Pacific,0.0,0.03320232044852345,7
+region,Rabies virus,Europe,0.2752036232188304,0.08686096580283875,9
+region,Rift Valley fever virus,Africa,0.033924395070624835,0.02900738464496022,9
+region,SARS-CoV-2 in animals,Europe,0.9997904997655743,0.9996060663901786,1
+region,Scrapie,Europe,0.4831615554390035,0.0418227168791363,1
+region,Sheep pox and goat pox,Asia and the Pacific,0.029201038976022997,0.2992356510655477,1
+region,Sheep pox and goat pox,Europe,0.0,0.0,9
+region,Spring viraemia of carp virus,Europe,0.0,0.0,4
+region,Taylorella equigenitalis (Contagious equine metritis),Europe,0.0,0.07808221976559726,6
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,0.1720875559496865,0.15374066457145352,6
+region,Venezuelan equine encephalomyelitis,Americas,0.0022454943188959797,0.08468840360382635,1
+region,Vesicular stomatitis (-2014),Americas,0.03221667167590003,0.0,5
+region,Viral haemorrhagic septicaemia virus,Europe,0.0,0.2248195926463099,11
+region,West Nile Fever,Africa,0.014298724799751694,0.12416590466602329,11
+region,West Nile Fever,Americas,0.008077170574437798,0.12221172419539439,6
+region,West Nile Fever,Europe,0.20851505573608786,0.45270741932569725,8

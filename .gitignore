@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Data (re-created by `python -m t6.fetch`)
+data/
+
+# Editor settings
+.vscode/

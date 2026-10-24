@@ -1,0 +1,81 @@
+level,disease,area,break,before,after
+global,African swine fever virus,all,2015-07,0.40432879428322044,1.3216602557232813
+global,African swine fever virus,all,2017-09,1.714943984271497,5.328154752036037
+global,Anthrax,all,2012-03,0.38305466327888793,0.7319655456718344
+global,Bluetongue virus,all,2023-11,0.279993528078831,2.0780013395457284
+global,Classical swine fever virus,all,2010-02,0.463288465478879,0.041731694434702454
+global,Cochliomyia hominivorax (New world screwworm),all,2022-08,-0.014322620493012037,0.28075400121376776
+global,Coxiella burnetii (Q fever),all,2023-09,-0.004300774777189918,0.3283192270218987
+global,Foot and mouth disease virus,all,2017-01,0.6984657827598797,2.6448080968989234
+global,Foot and mouth disease virus,all,2018-10,2.737136766456966,1.1212656739116378
+global,HPAI (all hosts),all,2014-09,0.9506474168532248,4.004806427288535
+global,HPAI (all hosts),all,2016-09,1.8259361796569005,8.225638763168027
+global,HPAI (all hosts),all,2018-11,5.441060748673347,2.143932666363432
+global,HPAI (all hosts),all,2020-07,2.0482741133152924,14.388302247085132
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,2022-01,0.06188659415320192,0.19629844251328646
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,2023-12,0.15000721884511087,0.024539957121245334
+global,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),all,2012-02,0.003240817906104755,0.32621773246019586
+global,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),all,2014-04,0.596892086677631,0.031839074992968334
+global,Leishmania spp. (Leishmaniosis),all,2019-02,0.0323619780213048,0.2903960034369004
+global,Low pathogenic avian influenza (poultry) (2006-2021),all,2007-03,0.12947764369719394,0.6126155448583894
+global,Low pathogenic avian influenza (poultry) (2006-2021),all,2021-04,0.9444333221743333,0.06362824237713052
+global,Lumpy skin disease virus,all,2016-04,0.1879724269529119,0.9082766477277773
+global,Newcastle disease virus,all,2006-02,2.0845554481411415,0.8206195966070691
+global,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),all,2014-08,0.11028819365692691,0.3320043238102264
+global,Rabies virus,all,2023-08,0.7781863136723657,2.796899305280501
+global,SARS-CoV-2 in animals,all,2018-12,-0.030438640725276724,0.1640060739106286
+global,SARS-CoV-2 in animals,all,2019-12,0.1640060739106286,0.8800487093966198
+global,SARS-CoV-2 in animals,all,2020-12,0.8800487093966198,3.972505748274078
+global,SARS-CoV-2 in animals,all,2022-02,3.537208168512377,0.5066478563962011
+global,SARS-CoV-2 in animals,all,2023-02,0.5066478563962011,0.1301110208929346
+global,Tilapia lake virus (2023-),all,2017-05,0.0815598318825017,0.2711186855584781
+global,Tilapia lake virus (2023-),all,2018-08,0.2602163581193636,0.04941785694483402
+global,Vesicular stomatitis (-2014),all,2007-12,0.2909310731604009,-0.015104446170518813
+global,West Nile Fever,all,2017-12,0.17061231514619737,0.8950279555454028
+region,African swine fever virus,Asia and the Pacific,2018-09,0.1869591858084219,3.930343006725842
+region,African swine fever virus,Asia and the Pacific,2019-10,3.9151103197946453,0.9914230410449341
+region,African swine fever virus,Europe,2014-01,0.051104884855631846,0.6112448359784626
+region,African swine fever virus,Europe,2016-12,0.6628290214289763,2.7515587780832806
+region,African swine fever virus,Europe,2021-04,2.140661678003952,7.123314111205627
+region,Anthrax,Europe,2012-05,0.312625194885544,0.592135545773327
+region,Bluetongue virus,Europe,2024-01,0.3279817140836152,1.8381945778631734
+region,Classical swine fever virus,Americas,2009-04,0.33903278978446,0.005036581414028276
+region,Cochliomyia hominivorax (New world screwworm),Americas,2022-08,-0.014322620493012037,0.28075400121376776
+region,Foot and mouth disease virus,Africa,2014-02,0.2644056483785201,0.7426840065447706
+region,Foot and mouth disease virus,Americas,2008-09,0.26083750812757395,0.01722257796033812
+region,Foot and mouth disease virus,Asia and the Pacific,2008-10,0.06264799222617505,1.40951681139097
+region,Foot and mouth disease virus,Asia and the Pacific,2011-01,1.1109303261712578,0.5222112599789084
+region,HPAI (all hosts),Africa,2020-12,0.0023254728503894263,1.8420375091093262
+region,HPAI (all hosts),Africa,2022-05,1.5812706017368763,0.6480791173690472
+region,HPAI (all hosts),Americas,2022-09,0.5713837474163528,2.889434159792716
+region,HPAI (all hosts),Americas,2023-11,3.3402929155303394,0.60754457876201
+region,HPAI (all hosts),Asia and the Pacific,2014-08,0.8964874836697516,1.769101534811266
+region,HPAI (all hosts),Europe,2016-10,0.2371244693720946,3.9063665037344455
+region,HPAI (all hosts),Europe,2018-10,1.883326073542634,0.2920319640768724
+region,HPAI (all hosts),Europe,2020-08,1.034208561747195,9.444990832275636
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,2021-08,0.06327482215414136,0.2860854286798196
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,2023-04,0.2645214359542465,0.027645340280708624
+region,Infectious haematopoietic necrosis virus,Europe,2017-06,-0.022200482334307332,0.2856441179938647
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,2013-02,0.05817870188230547,0.49423069545871795
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,2014-04,0.5103466053776609,0.08315542970122314
+region,Low pathogenic avian influenza (poultry) (2006-2021),Africa,2011-12,-0.007689028832347689,0.2612018524626726
+region,Low pathogenic avian influenza (poultry) (2006-2021),Africa,2014-07,0.23167917588942466,0.04356652931583404
+region,Lumpy skin disease virus,Europe,2015-12,0.11554808080194144,0.5716201053664844
+region,Lumpy skin disease virus,Europe,2017-07,0.4435867708255781,0.13363692451068146
+region,Newcastle disease virus,Europe,2006-10,1.00232337545933,0.4727432951846537
+region,Peste des petits ruminants virus,Europe,2024-01,0.04096322871931778,0.3131794335833477
+region,Rabies virus,Africa,2021-08,0.0697188834566019,0.2620650713780641
+region,Rabies virus,Asia and the Pacific,2023-11,0.056346911900920726,0.35029041976833086
+region,Rabies virus,Europe,2023-08,0.42943557922091724,1.7856231940159013
+region,SARS-CoV-2 in animals,Europe,2018-11,0.0005502280604604519,0.008751827291430758
+region,SARS-CoV-2 in animals,Europe,2019-11,0.008751827291430758,0.28409202925430677
+region,SARS-CoV-2 in animals,Europe,2020-11,0.28409202925430677,2.2052094206850086
+region,SARS-CoV-2 in animals,Europe,2022-03,2.1974544693661473,0.27691259773892196
+region,SARS-CoV-2 in animals,Europe,2023-03,0.27691259773892196,0.12345673905590114
+region,Scrapie,Europe,2008-04,0.16085844369786897,0.0016919511909016913
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,2009-05,0.05475259918990077,0.2015997197426022
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,2010-07,0.2719938566903224,-0.0055719349977787925
+region,Vesicular stomatitis (-2014),Americas,2007-12,0.2909310731604009,-0.015104446170518813
+region,West Nile Fever,Africa,2022-08,-0.001754604922123041,0.19051850099679327
+region,West Nile Fever,Europe,2017-10,0.06827852095989373,0.6029319019964745
+region,West Nile Fever,Europe,2024-01,0.45977292444764734,1.1968870052002472

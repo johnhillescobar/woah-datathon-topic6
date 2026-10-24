@@ -1,0 +1,701 @@
+level,disease,area,metric,y,mu,phi,se_eta,var,status,month,p,upper99,q,ratio,alert,z,period
+global,Acute hepatopancreatic necrosis disease (2016-),all,events,1.0,,,,,first_occurrence,2017-06-01,,,,,False,,retrospective
+global,Aethina tumida(Small hive beetle)(2006-),all,events,1.0,,,,,first_occurrence,2006-05-01,,,,,False,,retrospective
+global,African horse sickness virus,all,events,1.0,,,,,first_occurrence,2005-12-01,,,,,False,,retrospective
+global,African swine fever virus,all,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+global,Anthrax,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Aphanomyces astaci(Crayfish plague),all,events,1.0,,,,,first_occurrence,2009-09-01,,,,,False,,retrospective
+global,Aphanomyces astaci(Crayfish plague),all,events,1.0,,,,,reemergence,2020-08-01,,,,,False,,retrospective
+global,Aphanomyces invadans (Epizootic ulcerative syndrome),all,events,1.0,,,,,first_occurrence,2006-12-01,,,,,False,,retrospective
+global,Aphanomyces invadans (Epizootic ulcerative syndrome),all,events,1.0,,,,,reemergence,2010-08-01,,,,,False,,retrospective
+global,Aphanomyces invadans (Epizootic ulcerative syndrome),all,events,1.0,,,,,reemergence,2014-08-01,,,,,False,,retrospective
+global,Aujeszky's disease virus,all,events,1.0,,,,,first_occurrence,2005-04-01,,,,,False,,retrospective
+global,Aujeszky's disease virus,all,events,1.0,,,,,reemergence,2009-12-01,,,,,False,,retrospective
+global,Avian infectious laryngotracheitis,all,events,1.0,,,,,first_occurrence,2006-05-01,,,,,False,,retrospective
+global,Avian infectious laryngotracheitis,all,events,1.0,,,,,reemergence,2008-08-01,,,,,False,,retrospective
+global,Avian infectious laryngotracheitis,all,events,1.0,,,,,reemergence,2012-01-01,,,,,False,,retrospective
+global,Avian infectious laryngotracheitis,all,events,1.0,,,,,reemergence,2021-05-01,,,,,False,,retrospective
+global,Avian infectious laryngotracheitis,all,events,1.0,,,,,reemergence,2024-08-01,,,,,False,,retrospective
+global,Bluetongue virus,all,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+global,Bonamia ostreae,all,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+global,Bonamia ostreae,all,events,1.0,,,,,reemergence,2014-11-01,,,,,False,,retrospective
+global,Bonamia ostreae,all,events,1.0,,,,,reemergence,2025-10-01,,,,,False,,holdout
+global,Bovine spongiform encephalopathy,all,events,4.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Brucella abortus,all,events,1.0,,,,,first_occurrence,2007-09-01,,,,,False,,retrospective
+global,Brucella abortus,all,events,1.0,,,,,reemergence,2010-11-01,,,,,False,,retrospective
+global,Brucella abortus,all,events,1.0,,,,,reemergence,2015-08-01,,,,,False,,retrospective
+global,Brucella abortus,all,events,1.0,,,,,reemergence,2018-08-01,,,,,False,,retrospective
+global,Brucella abortus,all,events,2.0,,,,,reemergence,2025-11-01,,,,,False,,holdout
+global,Brucella melitensis,all,events,1.0,,,,,first_occurrence,2005-05-01,,,,,False,,retrospective
+global,Brucella melitensis,all,events,1.0,,,,,reemergence,2025-05-01,,,,,False,,holdout
+global,Brucella suis,all,events,1.0,,,,,first_occurrence,2008-05-01,,,,,False,,retrospective
+global,Brucella suis,all,events,1.0,,,,,reemergence,2015-06-01,,,,,False,,retrospective
+global,Brucella suis,all,events,1.0,,,,,reemergence,2021-05-01,,,,,False,,retrospective
+global,Brucella suis,all,events,1.0,,,,,reemergence,2024-02-01,,,,,False,,retrospective
+global,Burkholderia mallei (Glanders),all,events,1.0,,,,,first_occurrence,2007-09-01,,,,,False,,retrospective
+global,Burkholderia mallei (Glanders),all,events,1.0,,,,,reemergence,2017-10-01,,,,,False,,retrospective
+global,Burkholderia mallei (Glanders),all,events,1.0,,,,,reemergence,2023-01-01,,,,,False,,retrospective
+global,Caprine arthritis/encephalitis,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Caprine arthritis/encephalitis,all,events,1.0,,,,,reemergence,2011-05-01,,,,,False,,retrospective
+global,Caprine arthritis/encephalitis,all,events,1.0,,,,,reemergence,2014-09-01,,,,,False,,retrospective
+global,Caprine arthritis/encephalitis,all,events,1.0,,,,,reemergence,2017-05-01,,,,,False,,retrospective
+global,Classical swine fever virus,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Cochliomyia hominivorax (New world screwworm),all,events,1.0,,,,,first_occurrence,2009-04-01,,,,,False,,retrospective
+global,Cochliomyia hominivorax (New world screwworm),all,events,1.0,,,,,reemergence,2016-07-01,,,,,False,,retrospective
+global,Cochliomyia hominivorax (New world screwworm),all,events,1.0,,,,,reemergence,2019-12-01,,,,,False,,retrospective
+global,Coxiella burnetii (Q fever),all,events,1.0,,,,,first_occurrence,2005-11-01,,,,,False,,retrospective
+global,Coxiella burnetii (Q fever),all,events,1.0,,,,,reemergence,2008-04-01,,,,,False,,retrospective
+global,Coxiella burnetii (Q fever),all,events,1.0,,,,,reemergence,2011-12-01,,,,,False,,retrospective
+global,Coxiella burnetii (Q fever),all,events,1.0,,,,,reemergence,2020-04-01,,,,,False,,retrospective
+global,Coxiella burnetii (Q fever),all,events,1.0,,,,,reemergence,2023-10-01,,,,,False,,retrospective
+global,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),all,events,1.0,,,,,first_occurrence,2009-07-01,,,,,False,,retrospective
+global,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),all,events,1.0,,,,,reemergence,2013-02-01,,,,,False,,retrospective
+global,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),all,events,1.0,,,,,reemergence,2022-10-01,,,,,False,,retrospective
+global,Epizootic hemorrhagic disease virus,all,events,2.0,,,,,first_occurrence,2006-07-01,,,,,False,,retrospective
+global,Epizootic hemorrhagic disease virus,all,events,1.0,,,,,reemergence,2009-01-01,,,,,False,,retrospective
+global,Epizootic hemorrhagic disease virus,all,events,2.0,,,,,reemergence,2015-09-01,,,,,False,,retrospective
+global,Epizootic hemorrhagic disease virus,all,events,1.0,,,,,reemergence,2020-10-01,,,,,False,,retrospective
+global,Equine arteritis virus,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Equine arteritis virus,all,events,1.0,,,,,reemergence,2008-07-01,,,,,False,,retrospective
+global,Equine arteritis virus,all,events,1.0,,,,,reemergence,2019-02-01,,,,,False,,retrospective
+global,Equine arteritis virus,all,events,1.0,,,,,reemergence,2024-04-01,,,,,False,,retrospective
+global,Equine infectious anaemia,all,events,1.0,,,,,first_occurrence,2005-04-01,,,,,False,,retrospective
+global,Equine influenza virus,all,events,1.0,,,,,first_occurrence,2005-05-01,,,,,False,,retrospective
+global,Equine influenza virus,all,events,2.0,,,,,reemergence,2007-08-01,,,,,False,,retrospective
+global,Foot and mouth disease virus,all,events,1.0,,,,,first_occurrence,2005-02-01,,,,,False,,retrospective
+global,Fowl typhoid,all,events,1.0,,,,,first_occurrence,2007-05-01,,,,,False,,retrospective
+global,Fowl typhoid,all,events,1.0,,,,,reemergence,2010-10-01,,,,,False,,retrospective
+global,Fowl typhoid,all,events,1.0,,,,,reemergence,2016-08-01,,,,,False,,retrospective
+global,Fowl typhoid,all,events,1.0,,,,,reemergence,2019-11-01,,,,,False,,retrospective
+global,HPAI (all hosts),all,events,1.0,,,,,first_occurrence,2005-02-01,,,,,False,,retrospective
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,events,1.0,,,,,reemergence,2009-06-01,,,,,False,,retrospective
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,events,1.0,,,,,reemergence,2012-07-01,,,,,False,,retrospective
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,events,1.0,,,,,reemergence,2016-07-01,,,,,False,,retrospective
+global,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,all,events,1.0,,,,,reemergence,2020-12-01,,,,,False,,retrospective
+global,Infectious haematopoietic necrosis virus,all,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+global,Infectious haematopoietic necrosis virus,all,events,1.0,,,,,reemergence,2013-12-01,,,,,False,,retrospective
+global,Infectious haematopoietic necrosis virus,all,events,1.0,,,,,reemergence,2016-02-01,,,,,False,,retrospective
+global,Infectious hypodermal and haematopoietic necrosis virus,all,events,1.0,,,,,first_occurrence,2008-03-01,,,,,False,,retrospective
+global,Infectious hypodermal and haematopoietic necrosis virus,all,events,1.0,,,,,reemergence,2019-03-01,,,,,False,,retrospective
+global,Infectious hypodermal and haematopoietic necrosis virus,all,events,1.0,,,,,reemergence,2024-08-01,,,,,False,,retrospective
+global,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),all,events,1.0,,,,,first_occurrence,2007-07-01,,,,,False,,retrospective
+global,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),all,events,1.0,,,,,reemergence,2012-02-01,,,,,False,,retrospective
+global,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),all,events,1.0,,,,,reemergence,2021-11-01,,,,,False,,retrospective
+global,Influenza A virus,all,events,2.0,,,,,first_occurrence,2009-04-01,,,,,False,,retrospective
+global,Koi herpesvirus,all,events,1.0,,,,,first_occurrence,2005-09-01,,,,,False,,retrospective
+global,Leishmania spp. (Leishmaniosis),all,events,1.0,,,,,first_occurrence,2011-01-01,,,,,False,,retrospective
+global,Leishmania spp. (Leishmaniosis),all,events,1.0,,,,,reemergence,2015-02-01,,,,,False,,retrospective
+global,Leishmania spp. (Leishmaniosis),all,events,1.0,,,,,reemergence,2019-03-01,,,,,False,,retrospective
+global,Low pathogenic avian influenza (poultry) (2006-2021),all,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+global,Lumpy skin disease virus,all,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+global,Lumpy skin disease virus,all,events,1.0,,,,,reemergence,2011-09-01,,,,,False,,retrospective
+global,Melissococcus plutonius (European foulbrood),all,events,1.0,,,,,first_occurrence,2009-07-01,,,,,False,,retrospective
+global,Mycobacterium tuberculosis complex(2019-),all,events,1.0,,,,,first_occurrence,2019-02-01,,,,,False,,retrospective
+global,Mycoplasma mycoides subsp. mycoides (Contagious bovine pleuropneumonia),all,events,1.0,,,,,first_occurrence,2007-06-01,,,,,False,,retrospective
+global,Mycoplasma mycoides subsp. mycoides (Contagious bovine pleuropneumonia),all,events,1.0,,,,,reemergence,2010-06-01,,,,,False,,retrospective
+global,Myxomatosis,all,events,1.0,,,,,first_occurrence,2006-11-01,,,,,False,,retrospective
+global,Myxomatosis,all,events,1.0,,,,,reemergence,2015-10-01,,,,,False,,retrospective
+global,Myxomatosis,all,events,1.0,,,,,reemergence,2018-10-01,,,,,False,,retrospective
+global,Newcastle disease virus,all,events,3.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Ostreid herpesvirus-1 microvariant(-2014),all,events,1.0,,,,,first_occurrence,2008-05-01,,,,,False,,retrospective
+global,Ostreid herpesvirus-1 microvariant(-2014),all,events,1.0,,,,,reemergence,2020-07-01,,,,,False,,retrospective
+global,Paenibacillus larvae (American foulbrood),all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Paenibacillus larvae (American foulbrood),all,events,1.0,,,,,reemergence,2022-09-01,,,,,False,,retrospective
+global,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),all,events,1.0,,,,,reemergence,2008-01-01,,,,,False,,retrospective
+global,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),all,events,1.0,,,,,reemergence,2010-02-01,,,,,False,,retrospective
+global,Perkinsus olseni(2006-),all,events,1.0,,,,,first_occurrence,2011-06-01,,,,,False,,retrospective
+global,Perkinsus olseni(2006-),all,events,1.0,,,,,reemergence,2023-04-01,,,,,False,,retrospective
+global,Peste des petits ruminants virus,all,events,2.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Porcine reproductive and respiratory syndrome virus,all,events,1.0,,,,,first_occurrence,2007-03-01,,,,,False,,retrospective
+global,Porcine reproductive and respiratory syndrome virus,all,events,1.0,,,,,reemergence,2024-02-01,,,,,False,,retrospective
+global,Rabies virus,all,events,2.0,,,,,first_occurrence,2007-02-01,,,,,False,,retrospective
+global,Rift Valley fever virus,all,events,1.0,,,,,first_occurrence,2006-12-01,,,,,False,,retrospective
+global,SARS-CoV-2 in animals,all,events,1.0,,,,,first_occurrence,2020-01-01,,,,,False,,retrospective
+global,Scrapie,all,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+global,Scrapie,all,events,1.0,,,,,reemergence,2016-09-01,,,,,False,,retrospective
+global,Sheep pox and goat pox,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Spring viraemia of carp virus,all,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+global,Spring viraemia of carp virus,all,events,1.0,,,,,reemergence,2014-04-01,,,,,False,,retrospective
+global,Spring viraemia of carp virus,all,events,1.0,,,,,reemergence,2016-05-01,,,,,False,,retrospective
+global,Spring viraemia of carp virus,all,events,1.0,,,,,reemergence,2019-04-01,,,,,False,,retrospective
+global,Taylorella equigenitalis (Contagious equine metritis),all,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+global,Taylorella equigenitalis (Contagious equine metritis),all,events,1.0,,,,,reemergence,2019-07-01,,,,,False,,retrospective
+global,Theileria equi and Babesia caballi (Equine piroplasmosis),all,events,1.0,,,,,first_occurrence,2008-07-01,,,,,False,,retrospective
+global,Theileria equi and Babesia caballi (Equine piroplasmosis),all,events,1.0,,,,,reemergence,2015-06-01,,,,,False,,retrospective
+global,Tilapia lake virus (2023-),all,events,1.0,,,,,first_occurrence,2011-08-01,,,,,False,,retrospective
+global,Tilapia lake virus (2023-),all,events,1.0,,,,,reemergence,2015-10-01,,,,,False,,retrospective
+global,Tularemia,all,events,1.0,,,,,first_occurrence,2012-11-01,,,,,False,,retrospective
+global,Tularemia,all,events,1.0,,,,,reemergence,2015-11-01,,,,,False,,retrospective
+global,Tularemia,all,events,1.0,,,,,reemergence,2018-11-01,,,,,False,,retrospective
+global,Tularemia,all,events,1.0,,,,,reemergence,2023-07-01,,,,,False,,retrospective
+global,Varroa spp. (Varroosis),all,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+global,Varroa spp. (Varroosis),all,events,1.0,,,,,reemergence,2010-01-01,,,,,False,,retrospective
+global,Varroa spp. (Varroosis),all,events,1.0,,,,,reemergence,2013-03-01,,,,,False,,retrospective
+global,Varroa spp. (Varroosis),all,events,1.0,,,,,reemergence,2021-02-01,,,,,False,,retrospective
+global,Venezuelan equine encephalomyelitis,all,events,1.0,,,,,first_occurrence,2009-01-01,,,,,False,,retrospective
+global,Venezuelan equine encephalomyelitis,all,events,1.0,,,,,reemergence,2019-10-01,,,,,False,,retrospective
+global,Vesicular stomatitis (-2014),all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,Viral haemorrhagic septicaemia virus,all,events,1.0,,,,,first_occurrence,2005-05-01,,,,,False,,retrospective
+global,Viral haemorrhagic septicaemia virus,all,events,1.0,,,,,reemergence,2012-12-01,,,,,False,,retrospective
+global,West Nile Fever,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,White spot syndrome virus,all,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+global,White spot syndrome virus,all,events,3.0,,,,,reemergence,2011-02-01,,,,,False,,retrospective
+global,White spot syndrome virus,all,events,1.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+global,White spot syndrome virus,all,events,1.0,,,,,reemergence,2020-04-01,,,,,False,,retrospective
+global,White spot syndrome virus,all,events,1.0,,,,,reemergence,2022-08-01,,,,,False,,retrospective
+region,Aethina tumida(Small hive beetle)(2006-),Americas,events,1.0,,,,,first_occurrence,2006-05-01,,,,,False,,retrospective
+region,Aethina tumida(Small hive beetle)(2006-),Americas,events,1.0,,,,,reemergence,2020-05-01,,,,,False,,retrospective
+region,African horse sickness virus,Africa,events,1.0,,,,,first_occurrence,2005-12-01,,,,,False,,retrospective
+region,African swine fever virus,Africa,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+region,African swine fever virus,Asia and the Pacific,events,5.0,,,,,first_occurrence,2018-08-01,,,,,False,,retrospective
+region,African swine fever virus,Europe,events,1.0,,,,,first_occurrence,2007-04-01,,,,,False,,retrospective
+region,Anthrax,Africa,events,1.0,,,,,first_occurrence,2006-04-01,,,,,False,,retrospective
+region,Anthrax,Africa,events,1.0,,,,,reemergence,2009-02-01,,,,,False,,retrospective
+region,Anthrax,Europe,events,2.0,,,,,first_occurrence,2005-08-01,,,,,False,,retrospective
+region,Aphanomyces astaci(Crayfish plague),Europe,events,1.0,,,,,first_occurrence,2009-09-01,,,,,False,,retrospective
+region,Aphanomyces astaci(Crayfish plague),Europe,events,1.0,,,,,reemergence,2020-08-01,,,,,False,,retrospective
+region,Aphanomyces invadans (Epizootic ulcerative syndrome),Africa,events,1.0,,,,,first_occurrence,2006-12-01,,,,,False,,retrospective
+region,Aphanomyces invadans (Epizootic ulcerative syndrome),Africa,events,1.0,,,,,reemergence,2010-08-01,,,,,False,,retrospective
+region,Aphanomyces invadans (Epizootic ulcerative syndrome),Africa,events,1.0,,,,,reemergence,2014-08-01,,,,,False,,retrospective
+region,Aujeszky's disease virus,Europe,events,1.0,,,,,first_occurrence,2007-11-01,,,,,False,,retrospective
+region,Aujeszky's disease virus,Europe,events,1.0,,,,,reemergence,2009-12-01,,,,,False,,retrospective
+region,Aujeszky's disease virus,Europe,events,1.0,,,,,reemergence,2018-03-01,,,,,False,,retrospective
+region,Bluetongue virus,Africa,events,1.0,,,,,first_occurrence,2006-07-01,,,,,False,,retrospective
+region,Bluetongue virus,Africa,events,1.0,,,,,reemergence,2016-05-01,,,,,False,,retrospective
+region,Bluetongue virus,Africa,events,1.0,,,,,reemergence,2024-10-01,,,,,False,,retrospective
+region,Bluetongue virus,Europe,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+region,Bovine spongiform encephalopathy,Americas,events,3.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Bovine spongiform encephalopathy,Americas,events,1.0,,,,,reemergence,2010-12-01,,,,,False,,retrospective
+region,Bovine spongiform encephalopathy,Americas,events,1.0,,,,,reemergence,2017-07-01,,,,,False,,retrospective
+region,Bovine spongiform encephalopathy,Americas,events,2.0,,,,,reemergence,2021-06-01,,,,,False,,retrospective
+region,Bovine spongiform encephalopathy,Europe,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Bovine spongiform encephalopathy,Europe,events,1.0,,,,,reemergence,2009-11-01,,,,,False,,retrospective
+region,Brucella melitensis,Europe,events,1.0,,,,,first_occurrence,2005-05-01,,,,,False,,retrospective
+region,Brucella melitensis,Europe,events,1.0,,,,,reemergence,2025-05-01,,,,,False,,holdout
+region,Brucella suis,Europe,events,1.0,,,,,first_occurrence,2008-05-01,,,,,False,,retrospective
+region,Brucella suis,Europe,events,1.0,,,,,reemergence,2015-06-01,,,,,False,,retrospective
+region,Brucella suis,Europe,events,1.0,,,,,reemergence,2021-05-01,,,,,False,,retrospective
+region,Brucella suis,Europe,events,1.0,,,,,reemergence,2024-02-01,,,,,False,,retrospective
+region,Classical swine fever virus,Americas,events,1.0,,,,,first_occurrence,2005-06-01,,,,,False,,retrospective
+region,Classical swine fever virus,Americas,events,1.0,,,,,reemergence,2018-08-01,,,,,False,,retrospective
+region,Classical swine fever virus,Americas,events,1.0,,,,,reemergence,2020-09-01,,,,,False,,retrospective
+region,Classical swine fever virus,Americas,events,1.0,,,,,reemergence,2023-11-01,,,,,False,,retrospective
+region,Classical swine fever virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2012-09-01,,,,,False,,retrospective
+region,Classical swine fever virus,Asia and the Pacific,events,1.0,,,,,reemergence,2021-06-01,,,,,False,,retrospective
+region,Classical swine fever virus,Asia and the Pacific,events,1.0,,,,,reemergence,2024-01-01,,,,,False,,retrospective
+region,Classical swine fever virus,Europe,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Cochliomyia hominivorax (New world screwworm),Americas,events,1.0,,,,,first_occurrence,2009-04-01,,,,,False,,retrospective
+region,Cochliomyia hominivorax (New world screwworm),Americas,events,1.0,,,,,reemergence,2016-07-01,,,,,False,,retrospective
+region,Cochliomyia hominivorax (New world screwworm),Americas,events,1.0,,,,,reemergence,2019-12-01,,,,,False,,retrospective
+region,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),Americas,events,1.0,,,,,first_occurrence,2009-07-01,,,,,False,,retrospective
+region,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),Americas,events,1.0,,,,,reemergence,2013-02-01,,,,,False,,retrospective
+region,Eastern equine encephalitis virus (Eastern equine encephalomyelitis) (2006-),Americas,events,1.0,,,,,reemergence,2022-10-01,,,,,False,,retrospective
+region,Equine arteritis virus,Europe,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Equine arteritis virus,Europe,events,1.0,,,,,reemergence,2008-07-01,,,,,False,,retrospective
+region,Equine arteritis virus,Europe,events,1.0,,,,,reemergence,2019-02-01,,,,,False,,retrospective
+region,Equine arteritis virus,Europe,events,1.0,,,,,reemergence,2024-04-01,,,,,False,,retrospective
+region,Equine infectious anaemia,Americas,events,1.0,,,,,first_occurrence,2007-04-01,,,,,False,,retrospective
+region,Equine infectious anaemia,Americas,events,1.0,,,,,reemergence,2019-02-01,,,,,False,,retrospective
+region,Equine infectious anaemia,Americas,events,1.0,,,,,reemergence,2023-03-01,,,,,False,,retrospective
+region,Equine infectious anaemia,Europe,events,1.0,,,,,first_occurrence,2005-04-01,,,,,False,,retrospective
+region,Equine influenza virus,Africa,events,1.0,,,,,first_occurrence,2005-05-01,,,,,False,,retrospective
+region,Equine influenza virus,Africa,events,1.0,,,,,reemergence,2008-07-01,,,,,False,,retrospective
+region,Equine influenza virus,Africa,events,1.0,,,,,reemergence,2018-10-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Africa,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Americas,events,1.0,,,,,first_occurrence,2005-02-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Americas,events,2.0,,,,,reemergence,2017-06-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Europe,events,1.0,,,,,first_occurrence,2005-06-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Middle East,events,1.0,,,,,first_occurrence,2006-10-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Middle East,events,1.0,,,,,reemergence,2015-08-01,,,,,False,,retrospective
+region,Foot and mouth disease virus,Middle East,events,1.0,,,,,reemergence,2021-11-01,,,,,False,,retrospective
+region,Fowl typhoid,Americas,events,1.0,,,,,first_occurrence,2007-05-01,,,,,False,,retrospective
+region,Fowl typhoid,Americas,events,1.0,,,,,reemergence,2010-10-01,,,,,False,,retrospective
+region,Fowl typhoid,Americas,events,1.0,,,,,reemergence,2016-08-01,,,,,False,,retrospective
+region,Fowl typhoid,Americas,events,1.0,,,,,reemergence,2019-11-01,,,,,False,,retrospective
+region,HPAI (all hosts),Africa,events,1.0,,,,,first_occurrence,2005-11-01,,,,,False,,retrospective
+region,HPAI (all hosts),Africa,events,1.0,,,,,reemergence,2014-03-01,,,,,False,,retrospective
+region,HPAI (all hosts),Americas,events,1.0,,,,,first_occurrence,2007-09-01,,,,,False,,retrospective
+region,HPAI (all hosts),Americas,events,1.0,,,,,reemergence,2012-06-01,,,,,False,,retrospective
+region,HPAI (all hosts),Asia and the Pacific,events,1.0,,,,,first_occurrence,2005-02-01,,,,,False,,retrospective
+region,HPAI (all hosts),Europe,events,2.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+region,HPAI (all hosts),Middle East,events,1.0,,,,,first_occurrence,2005-11-01,,,,,False,,retrospective
+region,HPAI (all hosts),Middle East,events,1.0,,,,,reemergence,2015-06-01,,,,,False,,retrospective
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,events,1.0,,,,,reemergence,2009-06-01,,,,,False,,retrospective
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,events,1.0,,,,,reemergence,2012-07-01,,,,,False,,retrospective
+region,Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis,Europe,events,1.0,,,,,reemergence,2020-12-01,,,,,False,,retrospective
+region,Infectious haematopoietic necrosis virus,Europe,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+region,Infectious haematopoietic necrosis virus,Europe,events,1.0,,,,,reemergence,2013-12-01,,,,,False,,retrospective
+region,Infectious haematopoietic necrosis virus,Europe,events,1.0,,,,,reemergence,2017-11-01,,,,,False,,retrospective
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,events,1.0,,,,,first_occurrence,2009-01-01,,,,,False,,retrospective
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,events,1.0,,,,,reemergence,2012-05-01,,,,,False,,retrospective
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,events,1.0,,,,,reemergence,2021-11-01,,,,,False,,retrospective
+region,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),Europe,events,1.0,,,,,reemergence,2023-11-01,,,,,False,,retrospective
+region,Influenza A virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2009-07-01,,,,,False,,retrospective
+region,Influenza A virus,Europe,events,1.0,,,,,first_occurrence,2009-08-01,,,,,False,,retrospective
+region,Koi herpesvirus,Europe,events,1.0,,,,,first_occurrence,2006-05-01,,,,,False,,retrospective
+region,Koi herpesvirus,Europe,events,1.0,,,,,reemergence,2025-07-01,,,,,False,,holdout
+region,Leishmania spp. (Leishmaniosis),Europe,events,1.0,,,,,first_occurrence,2019-03-01,,,,,False,,retrospective
+region,Low pathogenic avian influenza (poultry) (2006-2021),Africa,events,1.0,,,,,first_occurrence,2011-12-01,,,,,False,,retrospective
+region,Low pathogenic avian influenza (poultry) (2006-2021),Americas,events,1.0,,,,,first_occurrence,2007-03-01,,,,,False,,retrospective
+region,Low pathogenic avian influenza (poultry) (2006-2021),Asia and the Pacific,events,1.0,,,,,first_occurrence,2007-11-01,,,,,False,,retrospective
+region,Low pathogenic avian influenza (poultry) (2006-2021),Europe,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Africa,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Africa,events,1.0,,,,,reemergence,2011-09-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Africa,events,1.0,,,,,reemergence,2013-10-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Africa,events,1.0,,,,,reemergence,2016-06-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Africa,events,1.0,,,,,reemergence,2020-10-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Africa,events,1.0,,,,,reemergence,2023-02-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2013-02-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Asia and the Pacific,events,1.0,,,,,reemergence,2019-07-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Europe,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Europe,events,1.0,,,,,reemergence,2012-07-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Middle East,events,1.0,,,,,first_occurrence,2012-11-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Middle East,events,1.0,,,,,reemergence,2019-07-01,,,,,False,,retrospective
+region,Lumpy skin disease virus,Middle East,events,1.0,,,,,reemergence,2022-05-01,,,,,False,,retrospective
+region,Melissococcus plutonius (European foulbrood),Europe,events,1.0,,,,,first_occurrence,2010-08-01,,,,,False,,retrospective
+region,Melissococcus plutonius (European foulbrood),Europe,events,1.0,,,,,reemergence,2024-09-01,,,,,False,,retrospective
+region,Mycobacterium tuberculosis complex(2019-),Europe,events,1.0,,,,,first_occurrence,2019-02-01,,,,,False,,retrospective
+region,Mycoplasma mycoides subsp. mycoides (Contagious bovine pleuropneumonia),Africa,events,1.0,,,,,first_occurrence,2007-06-01,,,,,False,,retrospective
+region,Mycoplasma mycoides subsp. mycoides (Contagious bovine pleuropneumonia),Africa,events,1.0,,,,,reemergence,2010-06-01,,,,,False,,retrospective
+region,Newcastle disease virus,Africa,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+region,Newcastle disease virus,Africa,events,1.0,,,,,reemergence,2013-03-01,,,,,False,,retrospective
+region,Newcastle disease virus,Africa,events,1.0,,,,,reemergence,2024-01-01,,,,,False,,retrospective
+region,Newcastle disease virus,Americas,events,1.0,,,,,first_occurrence,2005-12-01,,,,,False,,retrospective
+region,Newcastle disease virus,Americas,events,1.0,,,,,reemergence,2018-09-01,,,,,False,,retrospective
+region,Newcastle disease virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2005-04-01,,,,,False,,retrospective
+region,Newcastle disease virus,Asia and the Pacific,events,1.0,,,,,reemergence,2019-04-01,,,,,False,,retrospective
+region,Newcastle disease virus,Asia and the Pacific,events,1.0,,,,,reemergence,2024-03-01,,,,,False,,retrospective
+region,Newcastle disease virus,Europe,events,3.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Ostreid herpesvirus-1 microvariant(-2014),Europe,events,1.0,,,,,first_occurrence,2008-05-01,,,,,False,,retrospective
+region,Paenibacillus larvae (American foulbrood),Europe,events,1.0,,,,,first_occurrence,2005-09-01,,,,,False,,retrospective
+region,Paenibacillus larvae (American foulbrood),Europe,events,1.0,,,,,reemergence,2022-09-01,,,,,False,,retrospective
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Americas,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Americas,events,1.0,,,,,reemergence,2008-01-01,,,,,False,,retrospective
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Americas,events,1.0,,,,,reemergence,2010-02-01,,,,,False,,retrospective
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Americas,events,1.0,,,,,reemergence,2016-07-01,,,,,False,,retrospective
+region,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),Europe,events,1.0,,,,,first_occurrence,2011-04-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Africa,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Africa,events,1.0,,,,,reemergence,2011-02-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2007-07-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Asia and the Pacific,events,1.0,,,,,reemergence,2013-12-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Asia and the Pacific,events,1.0,,,,,reemergence,2021-01-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Europe,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Europe,events,1.0,,,,,reemergence,2011-08-01,,,,,False,,retrospective
+region,Peste des petits ruminants virus,Europe,events,1.0,,,,,reemergence,2013-09-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2007-03-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Asia and the Pacific,events,1.0,,,,,reemergence,2019-01-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Asia and the Pacific,events,1.0,,,,,reemergence,2021-02-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Europe,events,1.0,,,,,first_occurrence,2007-07-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Europe,events,1.0,,,,,reemergence,2012-11-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Europe,events,1.0,,,,,reemergence,2017-06-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Europe,events,1.0,,,,,reemergence,2020-05-01,,,,,False,,retrospective
+region,Porcine reproductive and respiratory syndrome virus,Europe,events,1.0,,,,,reemergence,2024-02-01,,,,,False,,retrospective
+region,Rabies virus,Africa,events,1.0,,,,,first_occurrence,2008-06-01,,,,,False,,retrospective
+region,Rabies virus,Africa,events,1.0,,,,,reemergence,2012-09-01,,,,,False,,retrospective
+region,Rabies virus,Africa,events,1.0,,,,,reemergence,2017-03-01,,,,,False,,retrospective
+region,Rabies virus,Africa,events,1.0,,,,,reemergence,2019-06-01,,,,,False,,retrospective
+region,Rabies virus,Americas,events,2.0,,,,,first_occurrence,2007-02-01,,,,,False,,retrospective
+region,Rabies virus,Americas,events,1.0,,,,,reemergence,2014-03-01,,,,,False,,retrospective
+region,Rabies virus,Americas,events,1.0,,,,,reemergence,2021-06-01,,,,,False,,retrospective
+region,Rabies virus,Americas,events,1.0,,,,,reemergence,2024-05-01,,,,,False,,retrospective
+region,Rabies virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2008-11-01,,,,,False,,retrospective
+region,Rabies virus,Asia and the Pacific,events,1.0,,,,,reemergence,2012-05-01,,,,,False,,retrospective
+region,Rabies virus,Asia and the Pacific,events,1.0,,,,,reemergence,2014-12-01,,,,,False,,retrospective
+region,Rabies virus,Asia and the Pacific,events,1.0,,,,,reemergence,2017-07-01,,,,,False,,retrospective
+region,Rabies virus,Asia and the Pacific,events,1.0,,,,,reemergence,2019-08-01,,,,,False,,retrospective
+region,Rabies virus,Europe,events,1.0,,,,,first_occurrence,2007-10-01,,,,,False,,retrospective
+region,Rift Valley fever virus,Africa,events,1.0,,,,,first_occurrence,2006-12-01,,,,,False,,retrospective
+region,SARS-CoV-2 in animals,Americas,events,1.0,,,,,first_occurrence,2020-02-01,,,,,False,,retrospective
+region,SARS-CoV-2 in animals,Asia and the Pacific,events,1.0,,,,,first_occurrence,2020-02-01,,,,,False,,retrospective
+region,SARS-CoV-2 in animals,Europe,events,1.0,,,,,first_occurrence,2020-01-01,,,,,False,,retrospective
+region,Scrapie,Europe,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+region,Scrapie,Europe,events,1.0,,,,,reemergence,2016-09-01,,,,,False,,retrospective
+region,Scrapie,Europe,events,1.0,,,,,reemergence,2025-01-01,,,,,False,,holdout
+region,Sheep pox and goat pox,Asia and the Pacific,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Sheep pox and goat pox,Asia and the Pacific,events,1.0,,,,,reemergence,2013-01-01,,,,,False,,retrospective
+region,Sheep pox and goat pox,Asia and the Pacific,events,1.0,,,,,reemergence,2015-01-01,,,,,False,,retrospective
+region,Sheep pox and goat pox,Asia and the Pacific,events,1.0,,,,,reemergence,2020-10-01,,,,,False,,retrospective
+region,Sheep pox and goat pox,Europe,events,1.0,,,,,first_occurrence,2007-01-01,,,,,False,,retrospective
+region,Spring viraemia of carp virus,Europe,events,1.0,,,,,first_occurrence,2007-05-01,,,,,False,,retrospective
+region,Spring viraemia of carp virus,Europe,events,1.0,,,,,reemergence,2014-04-01,,,,,False,,retrospective
+region,Spring viraemia of carp virus,Europe,events,1.0,,,,,reemergence,2016-05-01,,,,,False,,retrospective
+region,Spring viraemia of carp virus,Europe,events,1.0,,,,,reemergence,2019-04-01,,,,,False,,retrospective
+region,Taylorella equigenitalis (Contagious equine metritis),Europe,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+region,Taylorella equigenitalis (Contagious equine metritis),Europe,events,1.0,,,,,reemergence,2019-07-01,,,,,False,,retrospective
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,events,1.0,,,,,first_occurrence,2008-07-01,,,,,False,,retrospective
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,events,1.0,,,,,reemergence,2015-06-01,,,,,False,,retrospective
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,events,1.0,,,,,reemergence,2022-04-01,,,,,False,,retrospective
+region,Theileria equi and Babesia caballi (Equine piroplasmosis),Americas,events,1.0,,,,,reemergence,2024-06-01,,,,,False,,retrospective
+region,Tilapia lake virus (2023-),Asia and the Pacific,events,1.0,,,,,first_occurrence,2015-10-01,,,,,False,,retrospective
+region,Tilapia lake virus (2023-),Asia and the Pacific,events,1.0,,,,,reemergence,2022-09-01,,,,,False,,retrospective
+region,Tularemia,Europe,events,1.0,,,,,first_occurrence,2012-11-01,,,,,False,,retrospective
+region,Tularemia,Europe,events,1.0,,,,,reemergence,2015-11-01,,,,,False,,retrospective
+region,Tularemia,Europe,events,1.0,,,,,reemergence,2018-11-01,,,,,False,,retrospective
+region,Tularemia,Europe,events,1.0,,,,,reemergence,2023-07-01,,,,,False,,retrospective
+region,Venezuelan equine encephalomyelitis,Americas,events,1.0,,,,,first_occurrence,2009-01-01,,,,,False,,retrospective
+region,Venezuelan equine encephalomyelitis,Americas,events,1.0,,,,,reemergence,2019-10-01,,,,,False,,retrospective
+region,Vesicular stomatitis (-2014),Americas,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,Viral haemorrhagic septicaemia virus,Europe,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+region,Viral haemorrhagic septicaemia virus,Europe,events,1.0,,,,,reemergence,2012-12-01,,,,,False,,retrospective
+region,West Nile Fever,Africa,events,1.0,,,,,first_occurrence,2009-09-01,,,,,False,,retrospective
+region,West Nile Fever,Africa,events,1.0,,,,,reemergence,2015-10-01,,,,,False,,retrospective
+region,West Nile Fever,Africa,events,1.0,,,,,reemergence,2018-11-01,,,,,False,,retrospective
+region,West Nile Fever,Africa,events,1.0,,,,,reemergence,2022-08-01,,,,,False,,retrospective
+region,West Nile Fever,Americas,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+region,West Nile Fever,Americas,events,1.0,,,,,reemergence,2008-07-01,,,,,False,,retrospective
+region,West Nile Fever,Americas,events,1.0,,,,,reemergence,2016-08-01,,,,,False,,retrospective
+region,West Nile Fever,Americas,events,1.0,,,,,reemergence,2024-06-01,,,,,False,,retrospective
+region,West Nile Fever,Europe,events,1.0,,,,,first_occurrence,2006-09-01,,,,,False,,retrospective
+region,West Nile Fever,Europe,events,2.0,,,,,reemergence,2008-09-01,,,,,False,,retrospective
+region,White spot syndrome virus,Asia and the Pacific,events,1.0,,,,,first_occurrence,2011-02-01,,,,,False,,retrospective
+region,White spot syndrome virus,Asia and the Pacific,events,1.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+region,White spot syndrome virus,Asia and the Pacific,events,1.0,,,,,reemergence,2020-04-01,,,,,False,,retrospective
+region,White spot syndrome virus,Asia and the Pacific,events,1.0,,,,,reemergence,2022-08-01,,,,,False,,retrospective
+country,African swine fever virus,BGR,events,1.0,,,,,first_occurrence,2018-08-01,,,,,False,,retrospective
+country,African swine fever virus,BTN,events,1.0,,,,,first_occurrence,2021-05-01,,,,,False,,retrospective
+country,African swine fever virus,CHN,events,5.0,,,,,first_occurrence,2018-08-01,,,,,False,,retrospective
+country,African swine fever virus,DEU,events,1.0,,,,,first_occurrence,2020-09-01,,,,,False,,retrospective
+country,African swine fever virus,HKG,events,2.0,,,,,first_occurrence,2019-05-01,,,,,False,,retrospective
+country,African swine fever virus,HUN,events,1.0,,,,,first_occurrence,2018-04-01,,,,,False,,retrospective
+country,African swine fever virus,HUN,events,1.0,,,,,reemergence,2025-06-01,,,,,False,,holdout
+country,African swine fever virus,LVA,events,1.0,,,,,first_occurrence,2014-06-01,,,,,False,,retrospective
+country,African swine fever virus,LVA,events,1.0,,,,,reemergence,2017-01-01,,,,,False,,retrospective
+country,African swine fever virus,MDA,events,1.0,,,,,first_occurrence,2016-09-01,,,,,False,,retrospective
+country,African swine fever virus,POL,events,1.0,,,,,first_occurrence,2014-02-01,,,,,False,,retrospective
+country,African swine fever virus,POL,events,1.0,,,,,reemergence,2017-11-01,,,,,False,,retrospective
+country,African swine fever virus,ROU,events,1.0,,,,,first_occurrence,2017-07-01,,,,,False,,retrospective
+country,African swine fever virus,RUS,events,1.0,,,,,first_occurrence,2007-11-01,,,,,False,,retrospective
+country,African swine fever virus,RUS,events,2.0,,,,,reemergence,2014-01-01,,,,,False,,retrospective
+country,African swine fever virus,RUS,events,1.0,,,,,reemergence,2017-03-01,,,,,False,,retrospective
+country,African swine fever virus,UKR,events,1.0,,,,,first_occurrence,2012-07-01,,,,,False,,retrospective
+country,African swine fever virus,ZAF,events,1.0,,,,,first_occurrence,2012-01-01,,,,,False,,retrospective
+country,African swine fever virus,ZAF,events,1.0,,,,,reemergence,2016-05-01,,,,,False,,retrospective
+country,African swine fever virus,ZAF,events,1.0,,,,,reemergence,2018-05-01,,,,,False,,retrospective
+country,Anthrax,AZE,events,1.0,,,,,first_occurrence,2006-09-01,,,,,False,,retrospective
+country,Anthrax,AZE,events,1.0,,,,,reemergence,2012-08-01,,,,,False,,retrospective
+country,Anthrax,AZE,events,1.0,,,,,reemergence,2019-08-01,,,,,False,,retrospective
+country,Anthrax,ESP,events,2.0,,,,,first_occurrence,2021-08-01,,,,,False,,retrospective
+country,Anthrax,ITA,events,1.0,,,,,first_occurrence,2011-08-01,,,,,False,,retrospective
+country,Anthrax,ITA,events,1.0,,,,,reemergence,2014-09-01,,,,,False,,retrospective
+country,Anthrax,ITA,events,1.0,,,,,reemergence,2023-10-01,,,,,False,,retrospective
+country,Anthrax,KAZ,events,1.0,,,,,first_occurrence,2005-08-01,,,,,False,,retrospective
+country,Anthrax,KAZ,events,1.0,,,,,reemergence,2008-07-01,,,,,False,,retrospective
+country,Anthrax,KGZ,events,1.0,,,,,first_occurrence,2008-07-01,,,,,False,,retrospective
+country,Anthrax,KGZ,events,1.0,,,,,reemergence,2013-08-01,,,,,False,,retrospective
+country,Anthrax,KGZ,events,1.0,,,,,reemergence,2020-08-01,,,,,False,,retrospective
+country,Anthrax,LSO,events,1.0,,,,,first_occurrence,2006-04-01,,,,,False,,retrospective
+country,Anthrax,LSO,events,1.0,,,,,reemergence,2010-11-01,,,,,False,,retrospective
+country,Anthrax,LSO,events,1.0,,,,,reemergence,2014-02-01,,,,,False,,retrospective
+country,Anthrax,LSO,events,1.0,,,,,reemergence,2019-05-01,,,,,False,,retrospective
+country,Anthrax,LSO,events,1.0,,,,,reemergence,2025-02-01,,,,,False,,holdout
+country,Anthrax,ROU,events,1.0,,,,,first_occurrence,2007-12-01,,,,,False,,retrospective
+country,Anthrax,ROU,events,1.0,,,,,reemergence,2014-08-01,,,,,False,,retrospective
+country,Anthrax,ROU,events,1.0,,,,,reemergence,2022-07-01,,,,,False,,retrospective
+country,Anthrax,ROU,events,1.0,,,,,reemergence,2025-09-01,,,,,False,,holdout
+country,Aphanomyces astaci(Crayfish plague),ITA,events,1.0,,,,,first_occurrence,2009-09-01,,,,,False,,retrospective
+country,Aphanomyces astaci(Crayfish plague),ITA,events,1.0,,,,,reemergence,2020-08-01,,,,,False,,retrospective
+country,Aphanomyces astaci(Crayfish plague),ITA,events,1.0,,,,,reemergence,2023-07-01,,,,,False,,retrospective
+country,Aujeszky's disease virus,FRA,events,1.0,,,,,first_occurrence,2010-09-01,,,,,False,,retrospective
+country,Aujeszky's disease virus,FRA,events,1.0,,,,,reemergence,2018-03-01,,,,,False,,retrospective
+country,Aujeszky's disease virus,FRA,events,1.0,,,,,reemergence,2025-12-01,,,,,False,,holdout
+country,Bluetongue virus,DEU,events,1.0,,,,,first_occurrence,2006-08-01,,,,,False,,retrospective
+country,Bluetongue virus,DEU,events,1.0,,,,,reemergence,2018-12-01,,,,,False,,retrospective
+country,Bluetongue virus,DEU,events,2.0,,,,,reemergence,2023-10-01,,,,,False,,retrospective
+country,Bluetongue virus,ESP,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+country,Bluetongue virus,ESP,events,1.0,,,,,reemergence,2007-07-01,,,,,False,,retrospective
+country,Bluetongue virus,ESP,events,1.0,,,,,reemergence,2020-10-01,,,,,False,,retrospective
+country,Bluetongue virus,ESP,events,1.0,,,,,reemergence,2024-09-01,,,,,False,,retrospective
+country,Bluetongue virus,GRC,events,2.0,,,,,first_occurrence,2008-11-01,,,,,False,,retrospective
+country,Bluetongue virus,GRC,events,1.0,,,,,reemergence,2011-12-01,,,,,False,,retrospective
+country,Bluetongue virus,GRC,events,1.0,,,,,reemergence,2014-05-01,,,,,False,,retrospective
+country,Bluetongue virus,GRC,events,1.0,,,,,reemergence,2020-07-01,,,,,False,,retrospective
+country,Bluetongue virus,GRC,events,1.0,,,,,reemergence,2024-09-01,,,,,False,,retrospective
+country,Bluetongue virus,ITA,events,1.0,,,,,first_occurrence,2006-10-01,,,,,False,,retrospective
+country,Bluetongue virus,ITA,events,1.0,,,,,reemergence,2013-09-01,,,,,False,,retrospective
+country,Bluetongue virus,ITA,events,1.0,,,,,reemergence,2016-08-01,,,,,False,,retrospective
+country,Bluetongue virus,ITA,events,1.0,,,,,reemergence,2023-10-01,,,,,False,,retrospective
+country,Bluetongue virus,POL,events,2.0,,,,,first_occurrence,2024-11-01,,,,,False,,retrospective
+country,Bluetongue virus,PRT,events,1.0,,,,,first_occurrence,2006-11-01,,,,,False,,retrospective
+country,Bluetongue virus,PRT,events,1.0,,,,,reemergence,2018-10-01,,,,,False,,retrospective
+country,Bluetongue virus,PRT,events,1.0,,,,,reemergence,2021-08-01,,,,,False,,retrospective
+country,Bluetongue virus,ROU,events,1.0,,,,,first_occurrence,2014-08-01,,,,,False,,retrospective
+country,Bluetongue virus,ROU,events,1.0,,,,,reemergence,2020-08-01,,,,,False,,retrospective
+country,Bluetongue virus,ROU,events,1.0,,,,,reemergence,2025-09-01,,,,,False,,holdout
+country,Brucella melitensis,HRV,events,1.0,,,,,first_occurrence,2005-05-01,,,,,False,,retrospective
+country,Brucella melitensis,HRV,events,1.0,,,,,reemergence,2007-12-01,,,,,False,,retrospective
+country,Brucella melitensis,HRV,events,1.0,,,,,reemergence,2013-10-01,,,,,False,,retrospective
+country,Brucella melitensis,HRV,events,1.0,,,,,reemergence,2016-10-01,,,,,False,,retrospective
+country,Brucella melitensis,HRV,events,1.0,,,,,reemergence,2018-10-01,,,,,False,,retrospective
+country,Classical swine fever virus,BRA,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,Classical swine fever virus,BRA,events,1.0,,,,,reemergence,2018-08-01,,,,,False,,retrospective
+country,Classical swine fever virus,BRA,events,1.0,,,,,reemergence,2020-09-01,,,,,False,,retrospective
+country,Classical swine fever virus,BRA,events,1.0,,,,,reemergence,2023-11-01,,,,,False,,retrospective
+country,Classical swine fever virus,RUS,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+country,Classical swine fever virus,RUS,events,1.0,,,,,reemergence,2007-02-01,,,,,False,,retrospective
+country,Classical swine fever virus,RUS,events,1.0,,,,,reemergence,2013-09-01,,,,,False,,retrospective
+country,Cochliomyia hominivorax (New world screwworm),MEX,events,1.0,,,,,first_occurrence,2024-11-01,,,,,False,,retrospective
+country,Equine infectious anaemia,CHL,events,1.0,,,,,first_occurrence,2019-04-01,,,,,False,,retrospective
+country,Equine infectious anaemia,CHL,events,1.0,,,,,reemergence,2024-04-01,,,,,False,,retrospective
+country,Equine infectious anaemia,DEU,events,1.0,,,,,first_occurrence,2006-09-01,,,,,False,,retrospective
+country,Equine infectious anaemia,DEU,events,1.0,,,,,reemergence,2009-10-01,,,,,False,,retrospective
+country,Equine infectious anaemia,DEU,events,1.0,,,,,reemergence,2014-12-01,,,,,False,,retrospective
+country,Equine infectious anaemia,DEU,events,1.0,,,,,reemergence,2017-01-01,,,,,False,,retrospective
+country,Equine infectious anaemia,DEU,events,1.0,,,,,reemergence,2020-05-01,,,,,False,,retrospective
+country,Equine infectious anaemia,DEU,events,1.0,,,,,reemergence,2024-03-01,,,,,False,,retrospective
+country,Equine infectious anaemia,FRA,events,1.0,,,,,first_occurrence,2005-04-01,,,,,False,,retrospective
+country,Equine infectious anaemia,FRA,events,1.0,,,,,reemergence,2007-05-01,,,,,False,,retrospective
+country,Equine infectious anaemia,FRA,events,1.0,,,,,reemergence,2017-12-01,,,,,False,,retrospective
+country,Equine infectious anaemia,FRA,events,1.0,,,,,reemergence,2020-04-01,,,,,False,,retrospective
+country,Equine infectious anaemia,FRA,events,1.0,,,,,reemergence,2023-05-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,BWA,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,BWA,events,1.0,,,,,reemergence,2020-09-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,BWA,events,1.0,,,,,reemergence,2026-01-01,,,,,False,,holdout
+country,Foot and mouth disease virus,CHN,events,1.0,,,,,first_occurrence,2005-04-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,COL,events,1.0,,,,,first_occurrence,2005-02-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,COL,events,1.0,,,,,reemergence,2008-04-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,COL,events,2.0,,,,,reemergence,2017-06-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ISR,events,1.0,,,,,first_occurrence,2005-12-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ISR,events,1.0,,,,,reemergence,2011-03-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ISR,events,1.0,,,,,reemergence,2025-01-01,,,,,False,,holdout
+country,Foot and mouth disease virus,KOR,events,1.0,,,,,first_occurrence,2010-01-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,KOR,events,1.0,,,,,reemergence,2014-07-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,KOR,events,1.0,,,,,reemergence,2023-05-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,LBY,events,1.0,,,,,first_occurrence,2009-01-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,LBY,events,1.0,,,,,reemergence,2019-04-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MNG,events,1.0,,,,,first_occurrence,2005-08-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MNG,events,1.0,,,,,reemergence,2010-04-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MNG,events,1.0,,,,,reemergence,2013-07-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MNG,events,1.0,,,,,reemergence,2021-05-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MNG,events,1.0,,,,,reemergence,2025-07-01,,,,,False,,holdout
+country,Foot and mouth disease virus,MOZ,events,1.0,,,,,first_occurrence,2010-09-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MOZ,events,1.0,,,,,reemergence,2014-07-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MOZ,events,1.0,,,,,reemergence,2020-08-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MWI,events,1.0,,,,,first_occurrence,2008-09-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MWI,events,1.0,,,,,reemergence,2015-08-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,MWI,events,1.0,,,,,reemergence,2017-08-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,NAM,events,1.0,,,,,first_occurrence,2007-11-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,PSE,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,PSE,events,1.0,,,,,reemergence,2012-04-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,PSE,events,1.0,,,,,reemergence,2017-02-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,PSE,events,1.0,,,,,reemergence,2024-11-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,RUS,events,1.0,,,,,first_occurrence,2005-06-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,RUS,events,1.0,,,,,reemergence,2010-07-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,TUR,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,TUR,events,1.0,,,,,reemergence,2015-09-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,TUR,events,1.0,,,,,reemergence,2023-03-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,TWN,events,1.0,,,,,first_occurrence,2009-02-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZAF,events,1.0,,,,,first_occurrence,2006-07-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZAF,events,1.0,,,,,reemergence,2008-12-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZMB,events,1.0,,,,,first_occurrence,2008-02-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZMB,events,1.0,,,,,reemergence,2010-09-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZMB,events,1.0,,,,,reemergence,2015-10-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZMB,events,1.0,,,,,reemergence,2020-12-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZMB,events,1.0,,,,,reemergence,2025-05-01,,,,,False,,holdout
+country,Foot and mouth disease virus,ZWE,events,1.0,,,,,first_occurrence,2010-05-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZWE,events,2.0,,,,,reemergence,2013-04-01,,,,,False,,retrospective
+country,Foot and mouth disease virus,ZWE,events,1.0,,,,,reemergence,2020-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),ARG,events,2.0,,,,,first_occurrence,2023-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),AUT,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),AUT,events,2.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),AUT,events,3.0,,,,,reemergence,2021-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),BEL,events,1.0,,,,,first_occurrence,2017-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),BEL,events,2.0,,,,,reemergence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),BGR,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),BGR,events,1.0,,,,,reemergence,2010-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),BGR,events,1.0,,,,,reemergence,2015-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),BTN,events,1.0,,,,,first_occurrence,2010-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),BTN,events,1.0,,,,,reemergence,2015-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),BTN,events,1.0,,,,,reemergence,2023-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),CAN,events,1.0,,,,,first_occurrence,2007-09-01,,,,,False,,retrospective
+country,HPAI (all hosts),CAN,events,1.0,,,,,reemergence,2014-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),CAN,events,1.0,,,,,reemergence,2021-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),CHE,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),CHE,events,1.0,,,,,reemergence,2008-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),CHE,events,1.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),CHE,events,1.0,,,,,reemergence,2021-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),CHN,events,1.0,,,,,first_occurrence,2006-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),CHN,events,1.0,,,,,reemergence,2008-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),CZE,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),CZE,events,2.0,,,,,reemergence,2017-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),CZE,events,1.0,,,,,reemergence,2020-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),DEU,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),DEU,events,1.0,,,,,reemergence,2014-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),DNK,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),DNK,events,1.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),ESP,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),ESP,events,1.0,,,,,reemergence,2009-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),ESP,events,1.0,,,,,reemergence,2017-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),ESP,events,1.0,,,,,reemergence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),FIN,events,1.0,,,,,first_occurrence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),FRA,events,2.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),FRA,events,3.0,,,,,reemergence,2015-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),GBR,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),GBR,events,1.0,,,,,reemergence,2014-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),HKG,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),HRV,events,1.0,,,,,first_occurrence,2005-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),HRV,events,1.0,,,,,reemergence,2016-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),HRV,events,1.0,,,,,reemergence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),HUN,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),HUN,events,1.0,,,,,reemergence,2015-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),HUN,events,2.0,,,,,reemergence,2020-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),IND,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRL,events,1.0,,,,,first_occurrence,2016-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRL,events,1.0,,,,,reemergence,2020-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRN,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRN,events,1.0,,,,,reemergence,2011-09-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRN,events,1.0,,,,,reemergence,2015-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRN,events,1.0,,,,,reemergence,2025-09-01,,,,,False,,holdout
+country,HPAI (all hosts),IRQ,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRQ,events,1.0,,,,,reemergence,2015-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),IRQ,events,1.0,,,,,reemergence,2024-05-01,,,,,False,,retrospective
+country,HPAI (all hosts),ISL,events,1.0,,,,,first_occurrence,2021-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),ISR,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),ISR,events,1.0,,,,,reemergence,2010-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),ISR,events,1.0,,,,,reemergence,2015-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),ITA,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),ITA,events,1.0,,,,,reemergence,2013-08-01,,,,,False,,retrospective
+country,HPAI (all hosts),ITA,events,3.0,,,,,reemergence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),JPN,events,1.0,,,,,first_occurrence,2007-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),JPN,events,1.0,,,,,reemergence,2010-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),JPN,events,1.0,,,,,reemergence,2014-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),JPN,events,2.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),JPN,events,1.0,,,,,reemergence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),KAZ,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+country,HPAI (all hosts),KAZ,events,1.0,,,,,reemergence,2015-05-01,,,,,False,,retrospective
+country,HPAI (all hosts),KAZ,events,2.0,,,,,reemergence,2020-09-01,,,,,False,,retrospective
+country,HPAI (all hosts),KHM,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),KHM,events,1.0,,,,,reemergence,2023-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),KOR,events,1.0,,,,,first_occurrence,2006-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),KOR,events,1.0,,,,,reemergence,2010-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),KOR,events,1.0,,,,,reemergence,2014-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),LAO,events,1.0,,,,,first_occurrence,2006-07-01,,,,,False,,retrospective
+country,HPAI (all hosts),LAO,events,1.0,,,,,reemergence,2014-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),LTU,events,1.0,,,,,first_occurrence,2017-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),LTU,events,1.0,,,,,reemergence,2020-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),MDA,events,1.0,,,,,first_occurrence,2022-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),MEX,events,1.0,,,,,first_occurrence,2012-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),MEX,events,1.0,,,,,reemergence,2015-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),MEX,events,1.0,,,,,reemergence,2017-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),MEX,events,1.0,,,,,reemergence,2022-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),MMR,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),MMR,events,1.0,,,,,reemergence,2010-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),MMR,events,1.0,,,,,reemergence,2015-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),NER,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),NER,events,1.0,,,,,reemergence,2015-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),NER,events,1.0,,,,,reemergence,2021-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),NGA,events,1.0,,,,,first_occurrence,2006-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),NGA,events,1.0,,,,,reemergence,2008-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),NGA,events,1.0,,,,,reemergence,2011-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),NGA,events,1.0,,,,,reemergence,2014-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),NGA,events,1.0,,,,,reemergence,2019-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),NLD,events,1.0,,,,,first_occurrence,2014-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),NLD,events,3.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),NOR,events,1.0,,,,,first_occurrence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),NPL,events,1.0,,,,,first_occurrence,2009-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),NPL,events,1.0,,,,,reemergence,2017-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),PHL,events,1.0,,,,,first_occurrence,2017-07-01,,,,,False,,retrospective
+country,HPAI (all hosts),PHL,events,1.0,,,,,reemergence,2020-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),POL,events,1.0,,,,,first_occurrence,2006-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),POL,events,1.0,,,,,reemergence,2016-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),POL,events,2.0,,,,,reemergence,2019-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),PRT,events,1.0,,,,,first_occurrence,2017-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),PRT,events,1.0,,,,,reemergence,2021-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),ROU,events,1.0,,,,,first_occurrence,2005-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),ROU,events,1.0,,,,,reemergence,2010-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),ROU,events,1.0,,,,,reemergence,2015-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),ROU,events,1.0,,,,,reemergence,2020-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),RUS,events,1.0,,,,,first_occurrence,2005-07-01,,,,,False,,retrospective
+country,HPAI (all hosts),RUS,events,1.0,,,,,reemergence,2009-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),RUS,events,2.0,,,,,reemergence,2014-09-01,,,,,False,,retrospective
+country,HPAI (all hosts),SRB,events,1.0,,,,,first_occurrence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),SRB,events,1.0,,,,,reemergence,2021-03-01,,,,,False,,retrospective
+country,HPAI (all hosts),SVK,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),SVK,events,1.0,,,,,reemergence,2016-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),SVN,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),SVN,events,2.0,,,,,reemergence,2017-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),SVN,events,1.0,,,,,reemergence,2020-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),SWE,events,1.0,,,,,first_occurrence,2006-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),SWE,events,1.0,,,,,reemergence,2015-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),TGO,events,1.0,,,,,first_occurrence,2007-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),TGO,events,1.0,,,,,reemergence,2016-08-01,,,,,False,,retrospective
+country,HPAI (all hosts),TGO,events,1.0,,,,,reemergence,2021-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),TUR,events,1.0,,,,,first_occurrence,2005-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),TUR,events,1.0,,,,,reemergence,2015-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),TUR,events,1.0,,,,,reemergence,2023-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),TWN,events,1.0,,,,,first_occurrence,2012-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),UKR,events,1.0,,,,,first_occurrence,2005-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),UKR,events,1.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,HPAI (all hosts),UKR,events,1.0,,,,,reemergence,2020-01-01,,,,,False,,retrospective
+country,HPAI (all hosts),USA,events,2.0,,,,,first_occurrence,2014-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),USA,events,1.0,,,,,reemergence,2020-04-01,,,,,False,,retrospective
+country,HPAI (all hosts),VNM,events,1.0,,,,,first_occurrence,2006-12-01,,,,,False,,retrospective
+country,HPAI (all hosts),VNM,events,1.0,,,,,reemergence,2013-10-01,,,,,False,,retrospective
+country,HPAI (all hosts),ZAF,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),ZAF,events,1.0,,,,,reemergence,2011-02-01,,,,,False,,retrospective
+country,HPAI (all hosts),ZAF,events,2.0,,,,,reemergence,2017-06-01,,,,,False,,retrospective
+country,HPAI (all hosts),ZAF,events,1.0,,,,,reemergence,2021-03-01,,,,,False,,retrospective
+country,Infectious salmon anaemia virus (HPR-deleted or HPR0 genotypes),NOR,events,1.0,,,,,first_occurrence,2012-05-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),DEU,events,1.0,,,,,first_occurrence,2008-10-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),DNK,events,1.0,,,,,first_occurrence,2006-06-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),DNK,events,1.0,,,,,reemergence,2013-05-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),DNK,events,1.0,,,,,reemergence,2016-07-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),FRA,events,1.0,,,,,first_occurrence,2009-01-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),FRA,events,1.0,,,,,reemergence,2015-10-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),NLD,events,1.0,,,,,first_occurrence,2010-05-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),NLD,events,1.0,,,,,reemergence,2020-12-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),TWN,events,1.0,,,,,first_occurrence,2008-10-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),TWN,events,1.0,,,,,reemergence,2017-12-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),USA,events,1.0,,,,,first_occurrence,2007-03-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),ZAF,events,1.0,,,,,first_occurrence,2011-12-01,,,,,False,,retrospective
+country,Low pathogenic avian influenza (poultry) (2006-2021),ZAF,events,1.0,,,,,reemergence,2019-02-01,,,,,False,,retrospective
+country,Lumpy skin disease virus,RUS,events,1.0,,,,,first_occurrence,2015-07-01,,,,,False,,retrospective
+country,Newcastle disease virus,BGR,events,1.0,,,,,first_occurrence,2005-08-01,,,,,False,,retrospective
+country,Newcastle disease virus,BGR,events,1.0,,,,,reemergence,2008-11-01,,,,,False,,retrospective
+country,Newcastle disease virus,BGR,events,1.0,,,,,reemergence,2013-01-01,,,,,False,,retrospective
+country,Newcastle disease virus,BGR,events,1.0,,,,,reemergence,2016-02-01,,,,,False,,retrospective
+country,Newcastle disease virus,BGR,events,1.0,,,,,reemergence,2025-07-01,,,,,False,,holdout
+country,Newcastle disease virus,ISR,events,1.0,,,,,first_occurrence,2005-02-01,,,,,False,,retrospective
+country,Newcastle disease virus,PER,events,1.0,,,,,first_occurrence,2008-06-01,,,,,False,,retrospective
+country,Newcastle disease virus,PER,events,1.0,,,,,reemergence,2025-11-01,,,,,False,,holdout
+country,Newcastle disease virus,POL,events,1.0,,,,,first_occurrence,2023-07-01,,,,,False,,retrospective
+country,Newcastle disease virus,ROU,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+country,Newcastle disease virus,ROU,events,1.0,,,,,reemergence,2012-09-01,,,,,False,,retrospective
+country,Newcastle disease virus,ROU,events,1.0,,,,,reemergence,2014-11-01,,,,,False,,retrospective
+country,Newcastle disease virus,RUS,events,1.0,,,,,first_occurrence,2019-01-01,,,,,False,,retrospective
+country,Newcastle disease virus,SWE,events,1.0,,,,,first_occurrence,2005-11-01,,,,,False,,retrospective
+country,Newcastle disease virus,SWE,events,1.0,,,,,reemergence,2008-11-01,,,,,False,,retrospective
+country,Newcastle disease virus,SWE,events,1.0,,,,,reemergence,2014-06-01,,,,,False,,retrospective
+country,Newcastle disease virus,SWE,events,1.0,,,,,reemergence,2016-11-01,,,,,False,,retrospective
+country,Newcastle disease virus,SWE,events,1.0,,,,,reemergence,2021-10-01,,,,,False,,retrospective
+country,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),NOR,events,1.0,,,,,first_occurrence,2014-05-01,,,,,False,,retrospective
+country,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),NOR,events,1.0,,,,,reemergence,2016-06-01,,,,,False,,retrospective
+country,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),NOR,events,1.0,,,,,reemergence,2019-01-01,,,,,False,,retrospective
+country,Pathogenic rabbit lagoviruses (Rabbit haemorrhagic disease),NOR,events,1.0,,,,,reemergence,2021-06-01,,,,,False,,retrospective
+country,Peste des petits ruminants virus,ISR,events,1.0,,,,,first_occurrence,2005-01-01,,,,,False,,retrospective
+country,Peste des petits ruminants virus,ISR,events,1.0,,,,,reemergence,2011-08-01,,,,,False,,retrospective
+country,Peste des petits ruminants virus,ISR,events,1.0,,,,,reemergence,2015-03-01,,,,,False,,retrospective
+country,Peste des petits ruminants virus,ISR,events,1.0,,,,,reemergence,2024-09-01,,,,,False,,retrospective
+country,Rabies virus,ARM,events,1.0,,,,,first_occurrence,2018-06-01,,,,,False,,retrospective
+country,Rabies virus,FRA,events,1.0,,,,,first_occurrence,2007-11-01,,,,,False,,retrospective
+country,Rabies virus,FRA,events,1.0,,,,,reemergence,2011-08-01,,,,,False,,retrospective
+country,Rabies virus,FRA,events,1.0,,,,,reemergence,2013-10-01,,,,,False,,retrospective
+country,Rabies virus,FRA,events,1.0,,,,,reemergence,2020-02-01,,,,,False,,retrospective
+country,Rabies virus,FRA,events,1.0,,,,,reemergence,2022-10-01,,,,,False,,retrospective
+country,Rabies virus,KAZ,events,1.0,,,,,first_occurrence,2016-10-01,,,,,False,,retrospective
+country,Rabies virus,MEL,events,1.0,,,,,first_occurrence,2020-01-01,,,,,False,,retrospective
+country,SARS-CoV-2 in animals,ESP,events,1.0,,,,,first_occurrence,2020-12-01,,,,,False,,retrospective
+country,SARS-CoV-2 in animals,POL,events,1.0,,,,,first_occurrence,2021-01-01,,,,,False,,retrospective
+country,Sheep pox and goat pox,BGR,events,1.0,,,,,first_occurrence,2013-09-01,,,,,False,,retrospective
+country,Sheep pox and goat pox,BGR,events,1.0,,,,,reemergence,2023-09-01,,,,,False,,retrospective
+country,Sheep pox and goat pox,RUS,events,1.0,,,,,first_occurrence,2008-10-01,,,,,False,,retrospective
+country,Taylorella equigenitalis (Contagious equine metritis),GBR,events,1.0,,,,,first_occurrence,2005-03-01,,,,,False,,retrospective
+country,Taylorella equigenitalis (Contagious equine metritis),GBR,events,1.0,,,,,reemergence,2020-04-01,,,,,False,,retrospective
+country,West Nile Fever,DEU,events,1.0,,,,,first_occurrence,2018-08-01,,,,,False,,retrospective
+country,West Nile Fever,FRA,events,1.0,,,,,first_occurrence,2006-09-01,,,,,False,,retrospective
+country,West Nile Fever,FRA,events,1.0,,,,,reemergence,2015-08-01,,,,,False,,retrospective
+country,West Nile Fever,FRA,events,1.0,,,,,reemergence,2017-12-01,,,,,False,,retrospective
+country,West Nile Fever,FRA,events,1.0,,,,,reemergence,2025-07-01,,,,,False,,holdout
