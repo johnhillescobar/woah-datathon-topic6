@@ -282,6 +282,63 @@ caption and a "Show the data" table. Screenshots are in `app/screenshots/`; its 
 
 ![Alerts page: global bluetongue with expected count, 99 % limit and alert months](app/screenshots/alerts.png)
 
+### Demo script (about 8 minutes)
+
+**Before you start.** Run the pipeline once so `data/processed/` exists (commands in the quick start),
+start the app with the command above, use a full-width browser window (about 1440 px) and move between
+pages with the top navigation bar (opening a page URL directly can land on another page).
+
+1. **Overview, 1 minute: why raw counts mislead.** Scroll to *Why raw counts mislead*. With *Countries
+   notifying an event per month* selected, then *Outbreaks notified per month*: reporting grew a lot. Say:
+   "A rising count does not mean a rising disease." Numbers: countries notifying per month 11.8 to 25.8
+   (2005-09 versus 2020-24), outbreaks per month 218 to 1,289 (5.9 times); the markers are the detected
+   level shifts.
+2. **Alerts, 2 minutes: what counts as unusual.** Defaults are *Outbreaks*, *Baseline*, *Global*,
+   *Bluetongue virus*. Point to the bars (observed), the dark line (expected), the grey band (99 % upper
+   limit) and the orange alert months (33). Say: "Normal is the seasonal level learned from the previous five
+   years; an alert is a month far above it." Biggest cases: June to November 2014 (peak 2,926 outbreaks in one
+   month, Greece, Bulgaria, Romania) and August 2007 (2,038, Germany, Belgium); scroll to the episodes table.
+   - Click *Autoregressive*: 25 alert months instead of 33. It stops flagging the tail of a wave already under
+     way. Across all series an episode lasts 1.8 months instead of 2.4.
+   - Be upfront about a weakness: set *Level* to *WOAH region*, *Disease* to *HPAI (all hosts)*, *Area* to
+     *Europe* and look at December 2023: 1,288 expected, 208 observed. A wave that recurs for several years
+     becomes the new normal.
+   - Scroll to *Largest episodes*: the same waves appear at several levels (bluetongue 2014, HPAI winter
+     2021-22, HPAI autumn 2025 in Europe and Germany). Deselect *WOAH region* and *Country* in the *Level*
+     pills for the clean global list.
+3. **Next month, 1.5 minutes: what to expect.** Say: "This is an expectation given recent activity, not an
+   alert level." In *Show the chart for* choose the global *HPAI (all hosts)* series: expected 1,211 (GBM) and
+   688 (LSTM) outbreaks in March 2026 against 1,315 last month, with a very wide 95 % range (about 4 to 5,600).
+   Search for *foot and mouth* (a plain text match): the two models differ 2.5 times (521 versus 211). Say: "Read it as a range, and
+   treat disagreement between the models as uncertainty."
+4. **Trends, 1.5 minutes: what changed.** Keep *Outbreaks* and *All*. Say: "98 series tested: 23 rise in raw
+   counts, but only 4 rise once we compare with all notifications, and 6 fall." In *All tested series* click
+   *Rising in raw counts*, then *Rising as a share* (African swine fever globally and in Europe, classical swine
+   fever in Asia-Pacific, rabies in Africa; ASF globally +26 % of its median share per year). Under *Seasons and
+   waves* pick HPAI: peak in February; bluetongue peaks in October, African swine fever in July.
+5. **Weather, 1.5 minutes: what the data support.** Defaults *Rainfall* and *Vector-borne*: wetter-than-usual
+   months precede more vector-borne outbreaks one month later (rate ratio 1.48 per standard deviation, 95 %
+   interval 1.20 to 1.82). In the coefficient table it is the only row that *survives the strict placebo test*
+   (placebo p 0.003, strict 0.017). Click *Without year effects*: the whole weather block looks significant
+   (p 0.007) and becomes ordinary (p 0.20) once shared time trends are removed. Scroll to *Does weather improve
+   forecasts?*: in the second chart (*What adding weather changes*) every dot is within about 0.01 of zero,
+   so weather adds almost nothing for prediction.
+6. **Methods and limits, 30 seconds: be honest about the edges.** Show the simulation table (a 4x outbreak is
+   detected 79 % of the time with about one false alert per 15 years per series) and the limitations. Early
+   warning is supported for one month on final-vintage counts; longer lead times were not found. The report
+   is available from the download buttons.
+
+**Three sentences to close.** (1) Normal and expected are defined by a seasonal baseline that ignores one-off
+waves, and alerts are screened for false discoveries (a nominal 5 %) and grouped into episodes. (2) Most apparent trends are reporting growth; ASF is
+the clear exception. (3) Weather adds very little to counts, except a plausible, exploratory rainfall signal for
+vector-borne diseases.
+
+**Questions to expect.** *Why not replace the statistical detector with the LSTM?* It forecasts better in
+waves but cannot explain why a month is flagged, so it supplements the alerts. *Is the rainfall link causal?*
+No: it is an association found after looking at the results, with a negligible out-of-sample gain. *Is this an
+early-warning system?* Partly: it flags a surge in the month it occurs and forecasts the next month; real-time
+reporting delay was not tested.
+
 ## Decision log
 
 Choices that change results, and why. Change a constant in `t6/config.py` and rerun to test
