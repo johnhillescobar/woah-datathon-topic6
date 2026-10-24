@@ -5,6 +5,7 @@ PDF: the same HTML printed by headless Edge or Chrome (whichever is installed).
 
 Run with `uv run python -m t6.build_report`. Writes reports/technical_report.html and .pdf.
 """
+
 import base64
 import mimetypes
 import re
@@ -24,7 +25,10 @@ BROWSERS = [
     r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
-    "msedge", "chrome", "google-chrome", "chromium",
+    "msedge",
+    "chrome",
+    "google-chrome",
+    "chromium",
 ]
 
 CSS = """
@@ -71,24 +75,35 @@ def embed_images(html: str, base: Path) -> str:
         mime = mimetypes.guess_type(path.name)[0] or "image/png"
         data = base64.b64encode(path.read_bytes()).decode()
         return f'{m.group(1)}src="data:{mime};base64,{data}"'
+
     return re.sub(r'(<img [^>]*?)src="([^"]+)"', swap, html)
 
 
 def contents(tokens) -> str:
-    items = "".join(f'<li><a href="#{t["id"]}">{t["name"]}</a></li>' for t in tokens if t["level"] == 2)
+    items = "".join(
+        f'<li><a href="#{t["id"]}">{t["name"]}</a></li>'
+        for t in tokens
+        if t["level"] == 2
+    )
     return f'<nav class="toc"><strong>Contents</strong><ol>{items}</ol></nav>'
 
 
 def build_html() -> Path:
-    md = markdown.Markdown(extensions=["tables", "fenced_code", "sane_lists", "toc", "attr_list"])
+    md = markdown.Markdown(
+        extensions=["tables", "fenced_code", "sane_lists", "toc", "attr_list"]
+    )
     body = md.convert(SRC.read_text(encoding="utf-8"))
-    title = re.search(r"<h1[^>]*>(.*?)</h1>", body, re.S).group(1)
+    title = re.search(r"<h1[^>]*>(.*?)</h1>", body, re.DOTALL).group(1)
     toc = contents([c for t in md.toc_tokens for c in [t, *t["children"]]])
-    body = body.replace("<hr />", "<hr />\n" + toc, 1)  # contents after the header block
+    body = body.replace(
+        "<hr />", "<hr />\n" + toc, 1
+    )  # contents after the header block
     body = embed_images(body, SRC.parent)
-    html = (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
-            f'<meta name="viewport" content="width=device-width, initial-scale=1">'
-            f"<title>{re.sub('<[^>]+>', '', title)}</title><style>{CSS}</style></head><body>{body}</body></html>")
+    html = (
+        f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        f'<meta name="viewport" content="width=device-width, initial-scale=1">'
+        f"<title>{re.sub('<[^>]+>', '', title)}</title><style>{CSS}</style></head><body>{body}</body></html>"
+    )
     out = SRC.with_suffix(".html")
     out.write_text(html, encoding="utf-8")
     return out
@@ -107,10 +122,23 @@ def build_pdf(html: Path) -> Path | None:
         print("No Edge or Chrome found: HTML written, PDF skipped.")
         return None
     pdf = html.with_suffix(".pdf")
-    with tempfile.TemporaryDirectory() as profile:  # own profile: works while a browser is open
-        subprocess.run([browser, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
-                        f"--user-data-dir={profile}", f"--print-to-pdf={pdf}", html.as_uri()],
-                       check=True, timeout=180, capture_output=True)
+    with (
+        tempfile.TemporaryDirectory() as profile
+    ):  # own profile: works while a browser is open
+        subprocess.run(
+            [
+                browser,
+                "--headless=new",
+                "--disable-gpu",
+                "--no-pdf-header-footer",
+                f"--user-data-dir={profile}",
+                f"--print-to-pdf={pdf}",
+                html.as_uri(),
+            ],
+            check=True,
+            timeout=180,
+            capture_output=True,
+        )
     return pdf
 
 

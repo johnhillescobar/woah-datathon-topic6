@@ -1,4 +1,5 @@
 """Monthly count series per disease x area (global, WOAH region, country)."""
+
 import pandas as pd
 
 from t6 import config as C
@@ -35,11 +36,20 @@ def monthly_counts(ob: pd.DataFrame, ev: pd.DataFrame, metric: str) -> pd.DataFr
     df = df.assign(ALL="all")
     idx = months()
     parts = []
-    for level, area_col in (("global", "ALL"), ("region", "region"), ("country", "iso_code")):
-        g = df.groupby(["disease", area_col, "start_month"]).size().unstack("start_month", fill_value=0)
+    for level, area_col in (
+        ("global", "ALL"),
+        ("region", "region"),
+        ("country", "iso_code"),
+    ):
+        g = (
+            df.groupby(["disease", area_col, "start_month"])
+            .size()
+            .unstack("start_month", fill_value=0)
+        )
         g = g.reindex(columns=idx, fill_value=0)
-        g.index = pd.MultiIndex.from_tuples([(level, d, a) for d, a in g.index],
-                                            names=["level", "disease", "area"])
+        g.index = pd.MultiIndex.from_tuples(
+            [(level, d, a) for d, a in g.index], names=["level", "disease", "area"]
+        )
         parts.append(g)
     wide = pd.concat(parts)
     return wide[wide.sum(axis=1) >= C.MIN_SERIES_TOTAL[metric]]

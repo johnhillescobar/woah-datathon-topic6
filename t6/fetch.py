@@ -2,6 +2,7 @@
 
 Idempotent: existing files are skipped. Run with `uv run python -m t6.fetch`.
 """
+
 import sys
 import zipfile
 from pathlib import Path
@@ -20,8 +21,7 @@ def download(url: str, dest: Path) -> Path:
     with requests.get(url, stream=True, timeout=60) as r:
         r.raise_for_status()
         with open(tmp, "wb") as f:
-            for chunk in r.iter_content(1 << 20):
-                f.write(chunk)
+            f.writelines(r.iter_content(1 << 20))
     tmp.rename(dest)
     print(f"fetched {dest.name} ({dest.stat().st_size / 1e6:.0f} MB)")
     return dest

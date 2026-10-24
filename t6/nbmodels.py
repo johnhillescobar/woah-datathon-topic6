@@ -21,6 +21,7 @@ disease).
 Run with `uv run python -m t6.nbmodels [--skip-placebo] [--association-only] [--skip-association]
 [--only MODEL ...]`. Needs t6.exposure.
 """
+
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
@@ -40,13 +41,26 @@ LAGS = (1, 2, 3)
 LAST_YEAR = 2024  # WorldClim ends here
 FIRST_TEST = 2018
 N_GROUPS = 12  # the 12 largest diseases get their own seasonality, the rest share one
-VECTOR = ("Bluetongue", "West Nile", "Lumpy skin", "Rift Valley", "Epizootic hemorrhagic",
-          "African horse sickness", "Schmallenberg")
-MODELS = {"nb_pooled": "none", "nb_climate": "main", "nb_climate_vector": "split",
-          "nb_precip_vector": "precip_vector"}
+VECTOR = (
+    "Bluetongue",
+    "West Nile",
+    "Lumpy skin",
+    "Rift Valley",
+    "Epizootic hemorrhagic",
+    "African horse sickness",
+    "Schmallenberg",
+)
+MODELS = {
+    "nb_pooled": "none",
+    "nb_climate": "main",
+    "nb_climate_vector": "split",
+    "nb_precip_vector": "precip_vector",
+}
 PLACEBOS = 300
 SEED = 0
-RIDGE = 1e-2  # tiny L2 on all but the constant: stops near-separated dummies from diverging
+RIDGE = (
+    1e-2  # tiny L2 on all but the constant: stops near-separated dummies from diverging
+)
 
 
 def load() -> dict:
@@ -61,26 +75,48 @@ def load() -> dict:
     clim, scale = {}, {}
     for v in VARS:
         wide = cc.pivot(index="iso_code", columns="month", values=v)
-        scale[v] = float(wide.loc[:, wide.columns <= fit_end].stack().std())  # before the first test year
-        clim[v] = (wide.reindex(keys["area"]).reindex(columns=idx).to_numpy() / scale[v]).astype(np.float64)
+        scale[v] = float(
+            wide.loc[:, wide.columns <= fit_end].stack().std()
+        )  # before the first test year
+        clim[v] = (
+            wide.reindex(keys["area"]).reindex(columns=idx).to_numpy() / scale[v]
+        ).astype(np.float64)
 
     pre = Y[:, : (FIRST_TEST - deep.START_YEAR) * 12].sum(1)
     top = keys.assign(n=pre).groupby("disease")["n"].sum().nlargest(N_GROUPS).index
-    grp = keys["disease"].map({d: i for i, d in enumerate(top)}).fillna(N_GROUPS).astype(int).to_numpy()
+    grp = (
+        keys["disease"]
+        .map({d: i for i, d in enumerate(top)})
+        .fillna(N_GROUPS)
+        .astype(int)
+        .to_numpy()
+    )
     return {
-        "keys": keys, "Y": Y, "idx": idx, "fn": deep.first_nonzero(Y), "L": deep.padded_log(Y),
-        "clim": clim, "grp": grp, "top": list(top),
+        "keys": keys,
+        "Y": Y,
+        "idx": idx,
+        "fn": deep.first_nonzero(Y),
+        "L": deep.padded_log(Y),
+        "clim": clim,
+        "grp": grp,
+        "top": list(top),
         "vec": keys["disease"].str.contains("|".join(VECTOR)).to_numpy().astype(float),
-        "rep": np.log1p((Y > 0).sum(0)),  # countries notifying in each month, a reporting-intensity proxy
+        "rep": np.log1p(
+            (Y > 0).sum(0)
+        ),  # countries notifying in each month, a reporting-intensity proxy
     }
 
 
 def climate_names(split: bool) -> list[str]:
     base = [f"{v}_lag{k}" for k in LAGS for v in VARS]
-    return [f"{n}_{g}" for g in (("other", "vector") if split else ("all",)) for n in base]
+    return [
+        f"{n}_{g}" for g in (("other", "vector") if split else ("all",)) for n in base
+    ]
 
 
-def features(D: dict, s, t, tm, mode: str, clim: dict | None = None, year_fe: bool = False):
+def features(
+    D: dict, s, t, tm, mode: str, clim: dict | None = None, year_fe: bool = False
+):
     """(continuous count features, everything else) for target months t of series s.
 
     Count features use data up to t-1 only; climate uses months t-1 .. t-3. `year_fe` adds calendar-year
@@ -90,15 +126,25 @@ def features(D: dict, s, t, tm, mode: str, clim: dict | None = None, year_fe: bo
     lag = lambda k: L[s, t + off - k]
     ang = 2 * np.pi * (t % 12) / 12
     oh = np.eye(N_GROUPS + 1)[D["grp"][s]]
-    cont = np.column_stack([
-        lag(1), lag(2), np.mean([lag(k) for k in range(3, 13)], 0), np.mean([lag(11), lag(12), lag(13)], 0),
-        np.log1p(tm[s]), np.log1p(t - D["fn"][s]), D["rep"][t - 1],
-    ])
+    cont = np.column_stack(
+        [
+            lag(1),
+            lag(2),
+            np.mean([lag(k) for k in range(3, 13)], 0),
+            np.mean([lag(11), lag(12), lag(13)], 0),
+            np.log1p(tm[s]),
+            np.log1p(t - D["fn"][s]),
+            D["rep"][t - 1],
+        ]
+    )
     rest = [oh[:, :-1], oh * np.sin(ang)[:, None], oh * np.cos(ang)[:, None]]
     if year_fe:
         rest.append(np.eye(D["Y"].shape[1] // 12)[t // 12][:, 1:])
     if mode == "precip_vector":
-        rest.append(np.column_stack([clim["prec_z"][s, t - k] for k in LAGS]) * D["vec"][s][:, None])
+        rest.append(
+            np.column_stack([clim["prec_z"][s, t - k] for k in LAGS])
+            * D["vec"][s][:, None]
+        )
     elif mode != "none":
         c = np.column_stack([clim[v][s, t - k] for k in LAGS for v in VARS])
         if mode == "main":
@@ -135,8 +181,15 @@ def irls_nb(X, y, alpha, iters=100):
 
 def nb_llf(X, y, beta, alpha) -> float:
     mu, r = np.exp(np.clip(X @ beta, -20, 20)), 1.0 / alpha
-    return float((special.gammaln(y + r) - special.gammaln(r) - special.gammaln(y + 1)
-                  + r * np.log(r / (r + mu)) + y * np.log(mu / (r + mu))).sum())
+    return float(
+        (
+            special.gammaln(y + r)
+            - special.gammaln(r)
+            - special.gammaln(y + 1)
+            + r * np.log(r / (r + mu))
+            + y * np.log(mu / (r + mu))
+        ).sum()
+    )
 
 
 def fit(X, y, rounds=3):
@@ -173,16 +226,27 @@ def rolling(D: dict, model: str) -> pd.DataFrame:
         s2, t2 = deep.samples(D["fn"], sp.test[0], sp.test[-1])
         X2, _ = design(*features(D, s2, t2, tm, mode), ref=ref)
         mu = np.clip(np.exp(np.clip(X2 @ beta, -20, 20)), 1e-6, 1e6)
-        out.append(pd.DataFrame({
-            "level": "country", "disease": D["keys"]["disease"].to_numpy()[s2],
-            "area": D["keys"]["area"].to_numpy()[s2], "month": D["idx"][t2], "y": Y[s2, t2],
-            "mu": mu, "var": mu + alpha * mu**2, "status": "tested", "alpha": alpha,
-        }))
+        out.append(
+            pd.DataFrame(
+                {
+                    "level": "country",
+                    "disease": D["keys"]["disease"].to_numpy()[s2],
+                    "area": D["keys"]["area"].to_numpy()[s2],
+                    "month": D["idx"][t2],
+                    "y": Y[s2, t2],
+                    "mu": mu,
+                    "var": mu + alpha * mu**2,
+                    "status": "tested",
+                    "alpha": alpha,
+                }
+            )
+        )
         print(f"  {model} {year}: n_train={len(s):,} alpha={alpha:.2f}")
     return pd.concat(out, ignore_index=True)
 
 
 # ---- comparison ----------------------------------------------------------------------------------
+
 
 def load_reference() -> dict:
     """Core models restricted to country-level rows the baseline tests."""
@@ -196,7 +260,9 @@ def load_reference() -> dict:
             d = pd.read_parquet(f)
             out[name] = d[(d["status"] == "tested") & (d["level"] == "country")]
     support = base[keyc]
-    return {k: v.merge(support, on=keyc)[keyc + ["y", "mu", "var"]] for k, v in out.items()}
+    return {
+        k: v.merge(support, on=keyc)[keyc + ["y", "mu", "var"]] for k, v in out.items()
+    }
 
 
 def compare_models() -> pd.DataFrame:
@@ -204,7 +270,9 @@ def compare_models() -> pd.DataFrame:
     preds = load_reference()
     for m in (*MODELS, "nb_gam"):  # nb_gam is written by t6.gam, when it has been run
         if (OUT / f"tests_{m}.parquet").exists():
-            preds[m] = pd.read_parquet(OUT / f"tests_{m}.parquet")[keyc + ["y", "mu", "var"]]
+            preds[m] = pd.read_parquet(OUT / f"tests_{m}.parquet")[
+                keyc + ["y", "mu", "var"]
+            ]
     # common support: every row all compared models score, 2018-2024
     common = None
     for d in preds.values():
@@ -219,32 +287,68 @@ def compare_models() -> pd.DataFrame:
         scored[name] = d
     ref = next(iter(scored.values()))
     is_vec = ref["disease"].str.contains("|".join(VECTOR)).to_numpy()
-    periods = {"2018-2024": ("2018-01-01", "2024-12-31"), "2020-2024": ("2020-01-01", "2024-12-31")}
-    pairs = [("nb_pooled", "ar1"), ("nb_pooled", "gbm"), ("nb_climate", "nb_pooled"),
-             ("nb_climate_vector", "nb_pooled"), ("nb_climate_vector", "nb_climate"),
-             ("nb_gam", "nb_pooled"), ("nb_gam", "nb_climate"), ("nb_precip_vector", "nb_pooled")]
+    periods = {
+        "2018-2024": ("2018-01-01", "2024-12-31"),
+        "2020-2024": ("2020-01-01", "2024-12-31"),
+    }
+    pairs = [
+        ("nb_pooled", "ar1"),
+        ("nb_pooled", "gbm"),
+        ("nb_climate", "nb_pooled"),
+        ("nb_climate_vector", "nb_pooled"),
+        ("nb_climate_vector", "nb_climate"),
+        ("nb_gam", "nb_pooled"),
+        ("nb_gam", "nb_climate"),
+        ("nb_precip_vector", "nb_pooled"),
+    ]
     pairs = [p for p in pairs if p[0] in scored and p[1] in scored]
     rows = []
     for pname, (lo, hi) in periods.items():
         sel = ((ref["month"] >= lo) & (ref["month"] <= hi)).to_numpy()
         for name, d in scored.items():
-            rows.append({"period": pname, "comparison": name, "kind": "level", "n_rows": int(sel.sum()),
-                         "mean_log_score": d.loc[sel, "ls"].mean(), "sd_z": d.loc[sel, "z"].std(),
-                         "share_p_lt_0.01": float((baseline.upper_p(d.loc[sel, "y"], d.loc[sel, "mu"],
-                                                                    d.loc[sel, "var"]) < 0.01).mean())})
+            rows.append(
+                {
+                    "period": pname,
+                    "comparison": name,
+                    "kind": "level",
+                    "n_rows": int(sel.sum()),
+                    "mean_log_score": d.loc[sel, "ls"].mean(),
+                    "sd_z": d.loc[sel, "z"].std(),
+                    "share_p_lt_0.01": float(
+                        (
+                            baseline.upper_p(
+                                d.loc[sel, "y"], d.loc[sel, "mu"], d.loc[sel, "var"]
+                            )
+                            < 0.01
+                        ).mean()
+                    ),
+                }
+            )
         for a, b in pairs:
             full = (scored[a]["ls"] - scored[b]["ls"]).to_numpy()
             for label, mask in (("", sel), (" [vector-borne rows]", sel & is_vec)):
                 if mask.sum() < 50 or (label and not b.startswith("nb_pooled")):
                     continue  # the vector-borne view is for models that add weather to nb_pooled
                 m, lo_, hi_ = compare.boot_mean(full[mask], ref["g"].to_numpy()[mask])
-                rows.append({"period": pname, "comparison": f"{a} - {b}{label}", "kind": "log_score_gain",
-                             "n_rows": int(mask.sum()), "mean_log_score": m, "ci_lo": lo_, "ci_hi": hi_,
-                             "win_rate": compare.win_rate(full[mask], ref["g"].to_numpy()[mask])})
+                rows.append(
+                    {
+                        "period": pname,
+                        "comparison": f"{a} - {b}{label}",
+                        "kind": "log_score_gain",
+                        "n_rows": int(mask.sum()),
+                        "mean_log_score": m,
+                        "ci_lo": lo_,
+                        "ci_hi": hi_,
+                        "win_rate": compare.win_rate(
+                            full[mask], ref["g"].to_numpy()[mask]
+                        ),
+                    }
+                )
     return pd.DataFrame(rows)
 
 
 # ---- association ----------------------------------------------------------------------------------
+
 
 def _permute_years(D: dict, rng) -> dict:
     """Shuffle whole calendar years of each country's climate (same permutation for all variables)."""
@@ -284,7 +388,7 @@ def _placebo_llf(args):
     X, _ = design(*features(D, s, t, tm, "split", clim, year_fe))
     y = D["Y"][s, t]
     beta = irls_nb(X, y, alpha)
-    return nb_llf(X, y, beta, alpha), beta[-len(climate_names(split=True)):]
+    return nb_llf(X, y, beta, alpha), beta[-len(climate_names(split=True)) :]
 
 
 def association(D: dict, placebos: int = PLACEBOS, year_fe: bool = False):
@@ -304,29 +408,59 @@ def association(D: dict, placebos: int = PLACEBOS, year_fe: bool = False):
     wald = float(b @ np.linalg.pinv(cov) @ b)
     lr = 2 * (nb_llf(X1, y, beta1, alpha) - nb_llf(X0, y, beta0, alpha))
     se = np.sqrt(np.diag(cov))
-    coef = pd.DataFrame({"term": names, "irr_per_sd": np.exp(b), "ci_lo": np.exp(b - 1.96 * se),
-                         "ci_hi": np.exp(b + 1.96 * se), "p": 2 * stats.norm.sf(np.abs(b / se))})
-    coef[["variable_lag", "disease_group"]] = coef["term"].str.rsplit("_", n=1, expand=True)
+    coef = pd.DataFrame(
+        {
+            "term": names,
+            "irr_per_sd": np.exp(b),
+            "ci_lo": np.exp(b - 1.96 * se),
+            "ci_hi": np.exp(b + 1.96 * se),
+            "p": 2 * stats.norm.sf(np.abs(b / se)),
+        }
+    )
+    coef[["variable_lag", "disease_group"]] = coef["term"].str.rsplit(
+        "_", n=1, expand=True
+    )
     coef["q_bh"] = multipletests(coef["p"], method="fdr_bh")[1]
 
-    tests = {"n_rows": len(y), "n_series": len(D["keys"]), "n_countries": int(groups.max() + 1),
-             "alpha": alpha, "wald_chi2": wald, "wald_df": k, "wald_p_cluster_robust": float(stats.chi2.sf(wald, k)),
-             "lr_stat": float(lr)}
+    tests = {
+        "n_rows": len(y),
+        "n_series": len(D["keys"]),
+        "n_countries": int(groups.max() + 1),
+        "alpha": alpha,
+        "wald_chi2": wald,
+        "wald_df": k,
+        "wald_p_cluster_robust": float(stats.chi2.sf(wald, k)),
+        "lr_stat": float(lr),
+    }
     if placebos:
         single_thread_workers()
         with ProcessPoolExecutor(initializer=_init, initargs=(D,)) as ex:
-            res = list(ex.map(_placebo_llf, [(SEED + b, alpha, year_fe) for b in range(placebos)]))
+            res = list(
+                ex.map(
+                    _placebo_llf, [(SEED + b, alpha, year_fe) for b in range(placebos)]
+                )
+            )
         lr_null = 2 * (np.array([r[0] for r in res]) - nb_llf(X0, y, beta0, alpha))
         null_b = np.array([r[1] for r in res])  # placebos x terms
         z_null = null_b / null_b.std(0)
         z_real = b / null_b.std(0)
         max_null = np.abs(z_null).max(1)
         # empirical two-sided p per term, and family-wise p against the largest |z| over all 18 terms
-        coef["placebo_p"] = [(1 + (np.abs(null_b[:, j]) >= abs(b[j])).sum()) / (1 + placebos) for j in range(k)]
-        coef["placebo_p_familywise"] = [(1 + (max_null >= abs(z_real[j])).sum()) / (1 + placebos) for j in range(k)]
-        tests.update({"placebos": placebos, "placebo_lr_median": float(np.median(lr_null)),
-                      "placebo_lr_p95": float(np.percentile(lr_null, 95)),
-                      "placebo_p": float((1 + (lr_null >= lr).sum()) / (1 + placebos))})
+        coef["placebo_p"] = [
+            (1 + (np.abs(null_b[:, j]) >= abs(b[j])).sum()) / (1 + placebos)
+            for j in range(k)
+        ]
+        coef["placebo_p_familywise"] = [
+            (1 + (max_null >= abs(z_real[j])).sum()) / (1 + placebos) for j in range(k)
+        ]
+        tests.update(
+            {
+                "placebos": placebos,
+                "placebo_lr_median": float(np.median(lr_null)),
+                "placebo_lr_p95": float(np.percentile(lr_null, 95)),
+                "placebo_p": float((1 + (lr_null >= lr).sum()) / (1 + placebos)),
+            }
+        )
     return coef, pd.Series(tests)
 
 
@@ -334,9 +468,15 @@ def main(argv: list[str]) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     TABLES.mkdir(parents=True, exist_ok=True)
     D = load()
-    print(f"{len(D['keys'])} country series, {D['Y'].shape[1]} months; top diseases: {D['top'][:4]} ...")
+    print(
+        f"{len(D['keys'])} country series, {D['Y'].shape[1]} months; top diseases: {D['top'][:4]} ..."
+    )
     pd.set_option("display.width", 220)
-    only = [a for a in argv[argv.index("--only") + 1:] if not a.startswith("--")] if "--only" in argv else list(MODELS)
+    only = (
+        [a for a in argv[argv.index("--only") + 1 :] if not a.startswith("--")]
+        if "--only" in argv
+        else list(MODELS)
+    )
     if "--association-only" not in argv:
         for m in only:
             rolling(D, m).to_parquet(OUT / f"tests_{m}.parquet")
@@ -356,7 +496,11 @@ def main(argv: list[str]) -> None:
     tests.to_csv(TABLES / "climate_association_tests.csv")
     print(tests.to_string())
     show = ["adjustment", "term", "irr_per_sd", "ci_lo", "ci_hi", "p", "q_bh"]
-    show += [c for c in ("placebo_p", "placebo_p_familywise") if c in pd.concat(coefs).columns]
+    show += [
+        c
+        for c in ("placebo_p", "placebo_p_familywise")
+        if c in pd.concat(coefs).columns
+    ]
     print(pd.concat(coefs)[show].round(3).to_string(index=False))
 
 

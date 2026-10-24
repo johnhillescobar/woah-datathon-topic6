@@ -337,7 +337,8 @@ interval). Left: raw annual counts. Right: share of all notifications. Orange ri
   mostly months in or right after a wave (79 % had at least 3 outbreaks the month before, 60 % were already in
   alert). The GBM's 80 % intervals cover 94 % of months in 2020-24 and 88-92 % for expected counts above 10, so
   they are too wide for large series, and for the largest series the two
-  models differ by up to a factor of two (global HPAI: GBM 1,211, LSTM 688, last month 1,315).
+  models differ by up to a factor of 2.5 (global foot-and-mouth disease: GBM 521, LSTM 211; global HPAI: GBM
+  1,211, LSTM 688, last month 1,315).
 
 ![Companion expectation against the statistical baseline](figures/companion_series.png)
 
@@ -422,7 +423,7 @@ an early-warning *system* for pre-emptive alerts would go beyond the evidence.
   local microclimate and humidity-type variables are out of reach (only tmin, tmax and precipitation are available).
   The weather results use observational data and test few lags.
 * The pooled forecast models were scored one step ahead; no multi-month horizon was evaluated. The
-  GBM's intervals are too wide for large series and the two models can disagree by a factor of two.
+  GBM's intervals are too wide for large series and the two models can disagree by a factor of up to 2.5.
   Hierarchical series (global, region, country) are dependent; the bootstrap by disease widens
   the intervals without changing the conclusions.
 * The vector-borne rainfall pattern was identified after seeing the data and should be confirmed on new
@@ -440,6 +441,10 @@ an early-warning *system* for pre-emptive alerts would go beyond the evidence.
   3 min), deep (about 10 min with the LSTM; seconds for the GBM), compare (about 15 s), companion
   (seconds with the GBM). nbmodels and gam take 10-30 minutes each, dominated by the placebo tests
   (`--skip-placebo` omits them). The commands are listed in the README.
+* **Clean-clone check.** A fresh clone of the repository, installed without PyTorch and run from the raw
+  downloads, completed every step (about 35 minutes with the placebo tests skipped; the GAM step alone
+  took 20), passed all 27 tests and reproduced the detector, trend, simulation, regression and GBM tables
+  identically; only the LSTM columns, which need PyTorch, were absent.
 * **Determinism.** Seeds and thread counts are fixed. Rerunning the GBM and an LSTM fit gave bit-identical
   predictions on this machine; the placebo tests use fixed seeds.
 * **Tests.** `uv run pytest` runs 27 tests (about 2 minutes).

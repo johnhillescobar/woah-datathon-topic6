@@ -8,6 +8,7 @@ error, and is turned into a negative-binomial predictive distribution for p-valu
 Only past data is used for each prediction, so the p-values are what a live system would have
 produced (no look-ahead).
 """
+
 from dataclasses import dataclass
 
 import numpy as np
@@ -16,20 +17,27 @@ from scipy import stats
 RIDGE = 1e-6
 HUBER_C = 2.58  # standardised Pearson residuals above this are down-weighted
 SCREEN_K = 3.0  # a month above 3x its seasonal median counts as a wave, not baseline
-SANE_FACTOR = 10.0  # an expected count above 10x the window maximum marks an unstable fit
-SANE_SE = 5.0       # so does a standard error of the log-mean above this
+SANE_FACTOR = (
+    10.0  # an expected count above 10x the window maximum marks an unstable fit
+)
+SANE_SE = 5.0  # so does a standard error of the log-mean above this
 
 
 @dataclass
 class Prediction:
-    mu: float      # expected count
-    phi: float     # dispersion (>= 1)
+    mu: float  # expected count
+    phi: float  # dispersion (>= 1)
     se_eta: float  # std. error of the log-mean prediction
-    var: float     # predictive variance of the count
+    var: float  # predictive variance of the count
 
 
-def design(t_years: np.ndarray, cal_month: np.ndarray, n_harm: int, trend: bool,
-           lag: np.ndarray | None = None) -> np.ndarray:
+def design(
+    t_years: np.ndarray,
+    cal_month: np.ndarray,
+    n_harm: int,
+    trend: bool,
+    lag: np.ndarray | None = None,
+) -> np.ndarray:
     """Columns: intercept, [linear trend], sin/cos pairs of the annual cycle, [log1p lagged count]."""
     cols = [np.ones(len(t_years))]
     if trend:
@@ -42,7 +50,9 @@ def design(t_years: np.ndarray, cal_month: np.ndarray, n_harm: int, trend: bool,
     return np.column_stack(cols)
 
 
-def irls_poisson(X: np.ndarray, y: np.ndarray, w: np.ndarray | None = None, iters: int = 40):
+def irls_poisson(
+    X: np.ndarray, y: np.ndarray, w: np.ndarray | None = None, iters: int = 40
+):
     """Poisson GLM (log link) by IRLS. Returns beta, mu, (X'WX)^-1."""
     n, p = X.shape
     w = np.ones(n) if w is None else w
@@ -88,14 +98,20 @@ def _dispersion(y, mu, w, p):
     return max(1.0, float(np.sum(w * r2) / max(np.sum(w) - p, 1.0)))
 
 
-def _fit_once(y, t, cal, t_next, cal_next, n_harm, trend, lag, lag_next, screen) -> Prediction:
+def _fit_once(
+    y, t, cal, t_next, cal_next, n_harm, trend, lag, lag_next, screen
+) -> Prediction:
     if lag is not None:
-        centre = lag.mean()  # keeps the intercept interpretable and the fit well-conditioned
+        centre = (
+            lag.mean()
+        )  # keeps the intercept interpretable and the fit well-conditioned
         lag, lag_next = lag - centre, np.array([lag_next - centre])
     else:
         lag_next = None
     X = design(t, cal, n_harm, trend, lag)
-    x_next = design(np.array([t_next]), np.array([cal_next]), n_harm, trend, lag_next)[0]
+    x_next = design(np.array([t_next]), np.array([cal_next]), n_harm, trend, lag_next)[
+        0
+    ]
     w0 = screen_weights(y, cal) if screen else np.ones(len(y))
     try:
         beta, mu, cov = irls_poisson(X, y, w0)
@@ -118,11 +134,16 @@ def _fit_once(y, t, cal, t_next, cal_next, n_harm, trend, lag, lag_next, screen)
 
 def _sane(p: Prediction, y: np.ndarray) -> bool:
     """A fit on a sparse window can separate and explode (coefficients in the hundreds)."""
-    return bool(np.isfinite(p.mu) and p.mu <= SANE_FACTOR * max(y.max(), 1.0) and p.se_eta <= SANE_SE)
+    return bool(
+        np.isfinite(p.mu)
+        and p.mu <= SANE_FACTOR * max(y.max(), 1.0)
+        and p.se_eta <= SANE_SE
+    )
 
 
-def fit_predict(y, t, cal, t_next, cal_next, n_harm, trend, lag=None, lag_next=0.0,
-                screen=True) -> Prediction:
+def fit_predict(
+    y, t, cal, t_next, cal_next, n_harm, trend, lag=None, lag_next=0.0, screen=True
+) -> Prediction:
     """Fit on the window (y, t in years, cal = calendar month) and predict the next month.
 
     With `lag` (log1p of the previous month's count for each window row) the model is a
@@ -135,7 +156,18 @@ def fit_predict(y, t, cal, t_next, cal_next, n_harm, trend, lag=None, lag_next=0
     """
     use_lag = lag is not None
     while True:
-        p = _fit_once(y, t, cal, t_next, cal_next, n_harm, trend, lag if use_lag else None, lag_next, screen)
+        p = _fit_once(
+            y,
+            t,
+            cal,
+            t_next,
+            cal_next,
+            n_harm,
+            trend,
+            lag if use_lag else None,
+            lag_next,
+            screen,
+        )
         if _sane(p, y) or not (use_lag or trend or n_harm):
             return p
         if use_lag:

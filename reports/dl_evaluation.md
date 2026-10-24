@@ -116,7 +116,7 @@ final-vintage, not as first reported.
 **How to read "expected next month".** It is the mean of the predictive distribution given counts through February 2026 and the calendar,
 not an alert threshold; a wave under way is expected to continue. The intervals are count quantiles (at least 80% / 95% coverage). In the
 rolling benchmark the GBM's 80% interval covers 94% of months overall (92% for expected counts above 10), so its high-volume intervals
-are too wide; the LSTM's are closer to nominal there (82%). The two models can disagree by up to 2x on the biggest series (global HPAI:
+are too wide; the LSTM's are closer to nominal there (82%). The two models can disagree by up to 2.5x on the biggest series (global foot-and-mouth disease: 521 vs 211; global HPAI:
 GBM 1,211, LSTM 688, last month 1,315), which is itself a warning to read those intervals loosely. `last_month_p` shows how surprising the
 last month was one step earlier (2 series below 0.01 for the GBM).
 

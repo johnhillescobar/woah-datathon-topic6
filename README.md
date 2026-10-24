@@ -28,6 +28,14 @@ uv run pytest                    # unit tests and simulated benchmarks
 uv run python -m t6.build_report # technical report -> reports/technical_report.html and .pdf (PDF needs Edge or Chrome)
 ```
 
+**Reproduction check (2026-10-24).** A fresh `git clone`, a new environment without PyTorch and the
+pipeline run from the raw downloads gave: every step exits 0, all 27 tests pass, and the detector,
+trend, simulation, weather-regression and GBM results are identical to the committed tables. The only
+differences are the LSTM columns (they need `uv sync --extra deep` and `t6.deep`), the placebo tests that
+were skipped for speed, run times and PDF metadata. The steps took about 35 minutes in total, 20 of them
+for the GAM. On Windows `uv sync` can fail once with "Access is denied" while installing a wheel (a file
+lock); running it again fixes it.
+
 `data/` is git-ignored: everything in it is re-created by the commands above. If the organisers'
 download URL (`t6/config.py: INFUR_URL`) ever changes, place the INFUR workbook at
 `data/raw/infur/infur_20260702.xlsx` and run the remaining steps.
@@ -66,7 +74,8 @@ t6/companion.py  "expected next month" layer (GBM; LSTM as adopted add-on)
 t6/nbmodels.py   pooled negative-binomial regressions, climate association, placebo test
 t6/gam.py        penalised-spline negative-binomial regression (nonlinear weather effects)
 t6/build_report.py  technical report: Markdown -> self-contained HTML and PDF
-tests/           unit tests and simulated benchmarks
+tests/           unit tests and simulated benchmarks; test_app.py smoke-tests the explorer app
+app/             Streamlit explorer of the results (streamlit_app.py, app_pages/, explorer/)
 reports/         technical_report.md/.html/.pdf, tables/ (results), figures/, dl_evaluation.md (model benchmark)
 charts/          the exploratory charts saved by notebooks/01_eda.ipynb
 notebooks/       01_eda.ipynb / .html: describe() and charts for every dataset
@@ -198,7 +207,7 @@ bootstrap over series:
   +0.14 [+0.11, +0.16] (2020-24) and passes the adoption rule; its forward forecasts are added as
   `*_lstm` columns. Only about 10 % of baseline alerts coincide with companion alerts: the rest are
   waves already under way, which the companion expects to continue. The GBM's high-volume
-  intervals are too wide, and for the largest series the two models differ by up to 2x.
+  intervals are too wide, and for the largest series the two models differ by up to 2.5x.
 
 ## Weather and disease: negative-binomial regressions and a GAM
 
@@ -253,6 +262,25 @@ early-warning tool.
   a prediction). 2025-01 onwards is a disease-only holdout (no WorldClim data after 2024-12).
 * Weather inference uses year-block placebo tests and cluster-robust errors because both outcomes
   and weather trend over time.
+
+## Explorer app
+
+```bash
+uv run streamlit run app/streamlit_app.py
+```
+
+A plain-language explorer for analysts; it only displays results the pipeline already wrote
+(`data/processed/` for the monthly charts, `reports/tables/` for everything else) and shows the
+commands to create `data/processed/` when it is missing. Pages: **Overview** (the six key findings,
+how to read the app, why raw counts mislead, the data citation), **Alerts** (observed, expected and
+99 % upper limit per disease and area, episodes, first occurrences, largest episodes), **Next month**
+(companion forecast table and chart with 80 / 95 % intervals), **Trends** (raw versus
+share-adjusted change per year, verdicts, STL figures, seasonal peaks), **Weather** (what was tested,
+rate-ratio curves, placebo tests, out-of-sample check) and **Methods and limits**. Every chart has a
+caption and a "Show the data" table. Screenshots are in `app/screenshots/`; its tests run with
+`uv run python -m pytest tests/test_app.py`.
+
+![Alerts page: global bluetongue with expected count, 99 % limit and alert months](app/screenshots/alerts.png)
 
 ## Decision log
 

@@ -1,4 +1,5 @@
 """Checks for the pooled negative-binomial regressions and the placebo shuffle."""
+
 import numpy as np
 import pandas as pd
 
@@ -46,14 +47,19 @@ def test_loglik_improves_with_a_true_predictor():
 
 def test_year_shuffle_keeps_values_and_within_year_order():
     n_years = 5
-    D = {"keys": pd.DataFrame({"area": ["A", "B"]}), "Y": np.zeros((2, 12 * n_years)),
-         "clim": {v: RNG.normal(size=(2, 12 * n_years)) for v in N.VARS}}
+    D = {
+        "keys": pd.DataFrame({"area": ["A", "B"]}),
+        "Y": np.zeros((2, 12 * n_years)),
+        "clim": {v: RNG.normal(size=(2, 12 * n_years)) for v in N.VARS},
+    }
     out = N._permute_years(D, np.random.default_rng(3))
     for v in N.VARS:
         for i in range(2):
             a = D["clim"][v][i].reshape(n_years, 12)
             b = out[v][i].reshape(n_years, 12)
-            assert sorted(map(tuple, a)) == sorted(map(tuple, b))  # same years, only reordered
+            assert sorted(map(tuple, a)) == sorted(
+                map(tuple, b)
+            )  # same years, only reordered
     assert not np.array_equal(out[N.VARS[0]], D["clim"][N.VARS[0]])
     # same permutation for all variables within a country: years stay aligned across variables
     a0 = D["clim"][N.VARS[0]][0].reshape(n_years, 12)

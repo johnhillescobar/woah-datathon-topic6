@@ -14,6 +14,7 @@ reports/figures/gam_climate_effects.png.
 
 Run with `uv run python -m t6.gam [--skip-placebo]` (after t6.nbmodels).
 """
+
 import sys
 from concurrent.futures import ProcessPoolExecutor
 
@@ -23,7 +24,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy import interpolate, stats
+from scipy import interpolate
 
 from t6 import compare, deep
 from t6 import config as C
@@ -40,6 +41,7 @@ BLUE, ORANGE, GREY = "#2a78d6", "#eb6834", "#898781"
 
 # ---- basis and penalty -----------------------------------------------------------------------------
 
+
 def _knots():
     inner = np.linspace(-X_RANGE, X_RANGE, N_INNER + 2)[1:-1]
     return np.r_[[-X_RANGE] * (DEGREE + 1), inner, [X_RANGE] * (DEGREE + 1)]
@@ -52,7 +54,9 @@ def basis(x: np.ndarray) -> np.ndarray:
 
 
 def smooth_terms() -> list[str]:
-    return [f"{v}_lag{k}_{g}" for g in ("other", "vector") for k in N.LAGS for v in VARS]
+    return [
+        f"{v}_lag{k}_{g}" for g in ("other", "vector") for k in N.LAGS for v in VARS
+    ]
 
 
 def smooth_features(D, s, t, clim=None, ref=None):
@@ -79,11 +83,12 @@ def penalty(n_base: int, lam: float) -> np.ndarray:
     block = lam * D2.T @ D2
     for j in range(len(smooth_terms())):
         a = n_base + j * NB_COLS
-        P[a:a + NB_COLS, a:a + NB_COLS] += block
+        P[a : a + NB_COLS, a : a + NB_COLS] += block
     return P
 
 
 # ---- penalised NB fit --------------------------------------------------------------------------------
+
 
 def irls(X, y, alpha, P, iters=100):
     beta = np.zeros(X.shape[1])
@@ -127,6 +132,7 @@ def effective_df(X, beta, alpha, P, cols) -> float:
 
 # ---- rolling-origin experiment -----------------------------------------------------------------------
 
+
 def _design(D, s, t, tm, ref=None, sref=None, clim=None, year_fe=False):
     cont, rest = N.features(D, s, t, tm, "none", clim, year_fe)
     X0, r0 = N.design(cont, rest, ref)
@@ -150,7 +156,9 @@ def choose_lambda(D, year: int) -> float:
     X2, _, _ = _design(D, s2, t2, tm, ref, sref)
     best = None
     for lam in LAMBDAS:
-        beta, alpha = fit(X, D["Y"][s, t], penalty(X.shape[1] - len(smooth_terms()) * NB_COLS, lam))
+        beta, alpha = fit(
+            X, D["Y"][s, t], penalty(X.shape[1] - len(smooth_terms()) * NB_COLS, lam)
+        )
         sc = _log_score(X2, D["Y"][s2, t2], beta, alpha)
         best = (sc, lam) if best is None or sc > best[0] else best
     return best[1]
@@ -169,10 +177,22 @@ def rolling(D) -> pd.DataFrame:
         s2, t2 = deep.samples(D["fn"], sp.test[0], sp.test[-1])
         X2, _, _ = _design(D, s2, t2, tm, ref, sref)
         mu = np.clip(np.exp(np.clip(X2 @ beta, -20, 20)), 1e-6, 1e6)
-        out.append(pd.DataFrame({
-            "level": "country", "disease": D["keys"]["disease"].to_numpy()[s2],
-            "area": D["keys"]["area"].to_numpy()[s2], "month": D["idx"][t2], "y": D["Y"][s2, t2],
-            "mu": mu, "var": mu + alpha * mu**2, "status": "tested", "alpha": alpha, "lambda": lam}))
+        out.append(
+            pd.DataFrame(
+                {
+                    "level": "country",
+                    "disease": D["keys"]["disease"].to_numpy()[s2],
+                    "area": D["keys"]["area"].to_numpy()[s2],
+                    "month": D["idx"][t2],
+                    "y": D["Y"][s2, t2],
+                    "mu": mu,
+                    "var": mu + alpha * mu**2,
+                    "status": "tested",
+                    "alpha": alpha,
+                    "lambda": lam,
+                }
+            )
+        )
         print(f"  nb_gam {year}: lambda={lam:g} alpha={alpha:.2f} n_train={len(s):,}")
     return pd.concat(out, ignore_index=True)
 
@@ -195,7 +215,12 @@ def _placebo(args):
     tm = deep.train_mean(D["Y"], D["fn"], T - 1)
     X, _, _ = _design(D, s, t, tm, clim=clim, year_fe=True)
     y = D["Y"][s, t]
-    return N.nb_llf(X, y, irls(X, y, alpha, penalty(X.shape[1] - len(smooth_terms()) * NB_COLS, lam)), alpha)
+    return N.nb_llf(
+        X,
+        y,
+        irls(X, y, alpha, penalty(X.shape[1] - len(smooth_terms()) * NB_COLS, lam)),
+        alpha,
+    )
 
 
 def association(D, lam: float, placebos: int):
@@ -204,7 +229,7 @@ def association(D, lam: float, placebos: int):
     tm = deep.train_mean(D["Y"], D["fn"], T - 1)
     y = D["Y"][s, t]
     groups = pd.factorize(D["keys"]["area"].to_numpy()[s])[0]
-    X1, ref, sref = _design(D, s, t, tm, year_fe=True)
+    X1, _ref, sref = _design(D, s, t, tm, year_fe=True)
     n_base = X1.shape[1] - len(smooth_terms()) * NB_COLS
     P = penalty(n_base, lam)
     beta1, alpha = fit(X1, y, P)
@@ -220,16 +245,30 @@ def association(D, lam: float, placebos: int):
     bl = N.irls_nb(Xl, y, alpha)
     lr_lin = 2 * (N.nb_llf(Xl, y, bl, alpha) - N.nb_llf(X0, y, beta0, alpha))
 
-    tests = {"n_rows": len(y), "lambda": lam, "alpha": alpha, "smooth_edf": edf,
-             "smooth_columns": len(smooth_cols), "lr_gam": float(lr), "lr_linear": float(lr_lin)}
+    tests = {
+        "n_rows": len(y),
+        "lambda": lam,
+        "alpha": alpha,
+        "smooth_edf": edf,
+        "smooth_columns": len(smooth_cols),
+        "lr_gam": float(lr),
+        "lr_linear": float(lr_lin),
+    }
     if placebos:
         N.single_thread_workers()
         with ProcessPoolExecutor(initializer=_init, initargs=(D,)) as ex:
-            llfs = list(ex.map(_placebo, [(N.SEED + b, alpha, lam) for b in range(placebos)]))
+            llfs = list(
+                ex.map(_placebo, [(N.SEED + b, alpha, lam) for b in range(placebos)])
+            )
         null = 2 * (np.array(llfs) - N.nb_llf(X0, y, beta0, alpha))
-        tests.update({"placebos": placebos, "placebo_lr_median": float(np.median(null)),
-                      "placebo_lr_p95": float(np.percentile(null, 95)),
-                      "placebo_p": float((1 + (null >= lr).sum()) / (1 + placebos))})
+        tests.update(
+            {
+                "placebos": placebos,
+                "placebo_lr_median": float(np.median(null)),
+                "placebo_lr_p95": float(np.percentile(null, 95)),
+                "placebo_p": float((1 + (null >= lr).sum()) / (1 + placebos)),
+            }
+        )
 
     # partial effect curves (incidence-rate ratio at each anomaly value, vs the sample average)
     grid = np.linspace(-X_RANGE, X_RANGE, 61)
@@ -237,26 +276,55 @@ def association(D, lam: float, placebos: int):
     rows = []
     for j, term in enumerate(smooth_terms()):
         a = n_base + j * NB_COLS
-        b, V = beta1[a:a + NB_COLS], cov[a:a + NB_COLS, a:a + NB_COLS]
-        f = Bg @ b - (sref[j * NB_COLS:(j + 1) * NB_COLS] @ b)
+        b, V = beta1[a : a + NB_COLS], cov[a : a + NB_COLS, a : a + NB_COLS]
+        f = Bg @ b - (sref[j * NB_COLS : (j + 1) * NB_COLS] @ b)
         se = np.sqrt(np.einsum("ij,jk,ik->i", Bg, V, Bg))
         var, lag, grp = term.rsplit("_", 2)
-        rows.append(pd.DataFrame({"variable": var, "lag": int(lag[3:]), "group": grp, "anomaly_sd": grid,
-                                  "irr": np.exp(f), "lo": np.exp(f - 1.96 * se), "hi": np.exp(f + 1.96 * se)}))
+        rows.append(
+            pd.DataFrame(
+                {
+                    "variable": var,
+                    "lag": int(lag[3:]),
+                    "group": grp,
+                    "anomaly_sd": grid,
+                    "irr": np.exp(f),
+                    "lo": np.exp(f - 1.96 * se),
+                    "hi": np.exp(f + 1.96 * se),
+                }
+            )
+        )
     return pd.Series(tests), pd.concat(rows, ignore_index=True)
 
 
 def figure(curves: pd.DataFrame, path):
-    titles = {"tmin_anom": "Minimum temperature", "tmax_anom": "Maximum temperature", "prec_z": "Precipitation"}
+    titles = {
+        "tmin_anom": "Minimum temperature",
+        "tmax_anom": "Maximum temperature",
+        "prec_z": "Precipitation",
+    }
     cols = {1: BLUE, 2: ORANGE, 3: GREY}
-    fig, axes = plt.subplots(2, 3, figsize=(10, 6), sharex=True, sharey=True, facecolor=SURFACE)
+    fig, axes = plt.subplots(
+        2, 3, figsize=(10, 6), sharex=True, sharey=True, facecolor=SURFACE
+    )
     for r, grp in enumerate(("vector", "other")):
         for c, var in enumerate(VARS):
             ax = axes[r, c]
             for lag in (1, 2, 3):
-                d = curves[(curves["variable"] == var) & (curves["group"] == grp) & (curves["lag"] == lag)]
-                ax.fill_between(d["anomaly_sd"], d["lo"], d["hi"], color=cols[lag], alpha=0.12, lw=0)
-                ax.plot(d["anomaly_sd"], d["irr"], color=cols[lag], lw=1.6, label=f"{lag} month{'s' if lag > 1 else ''} before")
+                d = curves[
+                    (curves["variable"] == var)
+                    & (curves["group"] == grp)
+                    & (curves["lag"] == lag)
+                ]
+                ax.fill_between(
+                    d["anomaly_sd"], d["lo"], d["hi"], color=cols[lag], alpha=0.12, lw=0
+                )
+                ax.plot(
+                    d["anomaly_sd"],
+                    d["irr"],
+                    color=cols[lag],
+                    lw=1.6,
+                    label=f"{lag} month{'s' if lag > 1 else ''} before",
+                )
             ax.axhline(1, color=MUTED, lw=0.8)
             ax.set_facecolor(SURFACE)
             ax.set_yscale("log")
@@ -267,13 +335,24 @@ def figure(curves: pd.DataFrame, path):
             if r == 0:
                 ax.set_title(titles[var], fontsize=10, color=INK, loc="left")
             if c == 0:
-                ax.set_ylabel(("Vector-borne diseases" if grp == "vector" else "Other diseases")
-                              + "\nrate ratio", fontsize=9, color=INK)
+                ax.set_ylabel(
+                    ("Vector-borne diseases" if grp == "vector" else "Other diseases")
+                    + "\nrate ratio",
+                    fontsize=9,
+                    color=INK,
+                )
             if r == 1:
-                ax.set_xlabel("anomaly (SD from the 1991-2020 norm)", fontsize=8, color=MUTED)
+                ax.set_xlabel(
+                    "anomaly (SD from the 1991-2020 norm)", fontsize=8, color=MUTED
+                )
     axes[0, 0].legend(frameon=False, fontsize=8, loc="upper left")
-    fig.suptitle("Outbreak counts versus weather anomalies, by months before (bands: 95% interval)",
-                 x=0.01, ha="left", fontsize=11, color=INK)
+    fig.suptitle(
+        "Outbreak counts versus weather anomalies, by months before (bands: 95% interval)",
+        x=0.01,
+        ha="left",
+        fontsize=11,
+        color=INK,
+    )
     fig.tight_layout(rect=(0, 0, 1, 0.95))
     fig.savefig(path, dpi=150)
     plt.close(fig)
@@ -288,7 +367,9 @@ def main(argv: list[str]) -> None:
         cmp_ = N.compare_models()
         cmp_.to_csv(N.TABLES / "nb_experiments.csv", index=False)
         pd.set_option("display.width", 220)
-        print(cmp_[cmp_["comparison"].str.contains("gam")].round(4).to_string(index=False))
+        print(
+            cmp_[cmp_["comparison"].str.contains("gam")].round(4).to_string(index=False)
+        )
         lam = float(res["lambda"].mode().iloc[0])
     else:
         lam = 10.0

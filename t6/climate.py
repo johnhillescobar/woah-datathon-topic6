@@ -6,6 +6,7 @@ nearest valid land cell; (2) read tmin/tmax/prec for those cells for every month
 
 Run with `uv run python -m t6.climate`.
 """
+
 import re
 
 import numpy as np
@@ -43,14 +44,19 @@ def assign_cells(lon: np.ndarray, lat: np.ndarray) -> pd.DataFrame:
         tree = cKDTree(np.column_stack([vr, vc]))
         dist, idx = tree.query(np.column_stack([r[snapped], c[snapped]]))
         r[snapped], c[snapped] = vr[idx], vc[idx]
-        print(f"snapped {snapped.sum():,} points to nearest land cell (max {dist.max():.1f} cells)")
-    return pd.DataFrame({"row": r, "col": c, "snapped": snapped,
-                         "cell_id": r * shape[1] + c})
+        print(
+            f"snapped {snapped.sum():,} points to nearest land cell (max {dist.max():.1f} cells)"
+        )
+    return pd.DataFrame(
+        {"row": r, "col": c, "snapped": snapped, "cell_id": r * shape[1] + c}
+    )
 
 
 def extract(cells: pd.DataFrame) -> pd.DataFrame:
     """Long table (cell_id, month, tmin, tmax, prec) for each unique cell."""
-    u = cells.drop_duplicates("cell_id")[["cell_id", "row", "col"]].reset_index(drop=True)
+    u = cells.drop_duplicates("cell_id")[["cell_id", "row", "col"]].reset_index(
+        drop=True
+    )
     out = {}
     for var in C.WC_VARS:
         series = []
@@ -62,11 +68,13 @@ def extract(cells: pd.DataFrame) -> pd.DataFrame:
         months = [m for m, _ in month_files(var)]
         print(f"{var}: {out[var].shape}")
     n_cells = len(u)
-    long = pd.DataFrame({
-        "cell_id": np.repeat(u["cell_id"].to_numpy(), len(months)),
-        "month": np.tile(months, n_cells),
-        **{v: out[v].ravel() for v in C.WC_VARS},
-    })
+    long = pd.DataFrame(
+        {
+            "cell_id": np.repeat(u["cell_id"].to_numpy(), len(months)),
+            "month": np.tile(months, n_cells),
+            **{v: out[v].ravel() for v in C.WC_VARS},
+        }
+    )
     return long
 
 
@@ -81,20 +89,36 @@ def add_anomalies(long: pd.DataFrame) -> pd.DataFrame:
     ref = long[(long["month"] >= C.CLIM_REF[0]) & (long["month"] <= C.CLIM_REF[1])]
     stats = ref.groupby(["cell_id", "cal_month"])[list(C.WC_VARS)].agg(["mean", "std"])
     stats.columns = [f"{v}_{s}" for v, s in stats.columns]
-    long = long.merge(stats, left_on=["cell_id", "cal_month"], right_index=True, how="left")
+    long = long.merge(
+        stats, left_on=["cell_id", "cal_month"], right_index=True, how="left"
+    )
     for v in ("tmin", "tmax"):
         long[f"{v}_anom"] = long[v] - long[f"{v}_mean"]
     z = (long["prec"] - long["prec_mean"]) / long["prec_std"].clip(lower=1.0)
     clipped = z.abs() > C.PREC_Z_CLIP
-    print(f"prec_z clipped to +/-{C.PREC_Z_CLIP}: {clipped.sum():,} cell-months "
-          f"({clipped.mean():.4%}) in {long.loc[clipped, 'cell_id'].nunique():,} cells")
+    print(
+        f"prec_z clipped to +/-{C.PREC_Z_CLIP}: {clipped.sum():,} cell-months "
+        f"({clipped.mean():.4%}) in {long.loc[clipped, 'cell_id'].nunique():,} cells"
+    )
     long["prec_z"] = z.clip(-C.PREC_Z_CLIP, C.PREC_Z_CLIP)
-    keep = ["cell_id", "month", "tmin", "tmax", "prec", "tmin_anom", "tmax_anom", "prec_z"]
+    keep = [
+        "cell_id",
+        "month",
+        "tmin",
+        "tmax",
+        "prec",
+        "tmin_anom",
+        "tmax_anom",
+        "prec_z",
+    ]
     return long[keep]
 
 
 def main() -> None:
-    ob = pd.read_parquet(C.INTERIM / "outbreaks.parquet", columns=["Outbreak_id", "Longitude", "Latitude"])
+    ob = pd.read_parquet(
+        C.INTERIM / "outbreaks.parquet",
+        columns=["Outbreak_id", "Longitude", "Latitude"],
+    )
     cells = assign_cells(ob["Longitude"].to_numpy(), ob["Latitude"].to_numpy())
     ob = pd.concat([ob[["Outbreak_id"]], cells[["cell_id", "snapped"]]], axis=1)
     ob.to_parquet(C.INTERIM / "outbreak_cells.parquet")

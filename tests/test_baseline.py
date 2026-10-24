@@ -1,4 +1,5 @@
 """Validation of the baseline against a reference GLM and against simulated benchmarks."""
+
 import numpy as np
 import pytest
 import statsmodels.api as sm
@@ -67,9 +68,11 @@ def test_no_overshoot_the_season_after_a_wave():
     rng = np.random.default_rng(7)
     ratios = []
     for _ in range(20):
-        y, cal, mu = _simulate(n_months=72, level=5.0, amp=0.8, theta=5.0, rng=rng)
+        y, cal, _mu = _simulate(n_months=72, level=5.0, amp=0.8, theta=5.0, rng=rng)
         clean = y.copy()
-        y[41:44] = np.maximum(y[41:44], 1) * 200  # wave in the 6th year of data, months 42-44
+        y[41:44] = (
+            np.maximum(y[41:44], 1) * 200
+        )  # wave in the 6th year of data, months 42-44
         i = 53  # same season, one year after the wave
         w = slice(i - 48, i)
         t = (np.arange(i - 48, i) - i) / 12.0
